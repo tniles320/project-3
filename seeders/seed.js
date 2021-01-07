@@ -1,4 +1,4 @@
-import { User } from "../models";
+const { User } = require("../models");
 
 let mongoose = require("mongoose");
 
