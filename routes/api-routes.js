@@ -1,3 +1,7 @@
+const passport = require("passport");
+const bcrypt = require("bcrypt");
+const { User } = require("../models");
+
 module.exports = function (app) {
   app.post("/login", (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
