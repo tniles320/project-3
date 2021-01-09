@@ -26,6 +26,8 @@ module.exports = function (app) {
         const newUser = new User({
           username: req.body.username,
           password: hashedPassword,
+          email: req.body.email,
+          zipCode: req.body.zipCode,
         });
         await newUser.save();
         res.send("User Created");

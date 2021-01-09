@@ -4,8 +4,13 @@ import HomeCard from "../../components/HomeCard";
 import "./style.css";
 
 function Home() {
-  const [registerUsername, setRegisterUsername] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
+  const [registerUser, setRegisterUser] = useState({
+    username: "",
+    password: "",
+    email: "",
+    zipCode: "",
+  });
+  // const [registerPassword, setRegisterPassword] = useState("");
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [data, setData] = useState(null);
@@ -13,8 +18,10 @@ function Home() {
     Axios({
       method: "POST",
       data: {
-        username: registerUsername,
-        password: registerPassword,
+        username: registerUser.username,
+        password: registerUser.password,
+        email: registerUser.email,
+        zipCode: registerUser.zipCode,
       },
       withCredentials: true,
       url: "http://localhost:3001/register",
@@ -48,8 +55,8 @@ function Home() {
     <div className="App">
       <h1>ManyGigs</h1>
       <HomeCard
-        setRegisterUsername={setRegisterUsername}
-        setRegisterPassword={setRegisterPassword}
+        setRegisterUser={setRegisterUser}
+        // setRegisterPassword={setRegisterPassword}
         setLoginUsername={setLoginUsername}
         setLoginPassword={setLoginPassword}
         getUser={getUser}
