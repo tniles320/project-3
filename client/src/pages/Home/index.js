@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import HomeCard from "../../components/HomeCard";
 import "./style.css";
 
 function Home() {
@@ -40,41 +41,25 @@ function Home() {
       console.log(res.data);
     });
   };
+  const createAccount = () => {
+    document.getElementById("register-info").style.visibility = "visible";
+  };
   return (
     <div className="App">
-      <div>
-        <h1>Register</h1>
-        <input
-          placeholder="username"
-          onChange={(e) => setRegisterUsername(e.target.value)}
-        />
-        <input
-          placeholder="password"
-          onChange={(e) => setRegisterPassword(e.target.value)}
-        />
-        <button onClick={register}>Submit</button>
-      </div>
-
-      <div>
-        <h1>Login</h1>
-        <div className="login">
-          <input
-            placeholder="username"
-            onChange={(e) => setLoginUsername(e.target.value)}
-          />
-          <input
-            placeholder="password"
-            onChange={(e) => setLoginPassword(e.target.value)}
-          />
-          <button onClick={login}>Submit</button>
-        </div>
-      </div>
-
-      <div>
-        <h1>Get User</h1>
-        <button onClick={getUser}>Submit</button>
-        {data ? <h1>Welcome Back {data.username}</h1> : null}
-      </div>
+      <h1>ManyGigs</h1>
+      <HomeCard
+        setRegisterUsername={setRegisterUsername}
+        setRegisterPassword={setRegisterPassword}
+        setLoginUsername={setLoginUsername}
+        setLoginPassword={setLoginPassword}
+        getUser={getUser}
+        login={login}
+        register={register}
+        data={data}
+        createAccount={createAccount}
+        // setRegisterEmail={setRegisterEmail}
+        // setRegisterZipCode={setRegisterZipCode}
+      />
     </div>
   );
 }
