@@ -3,8 +3,7 @@ import "./style.css";
 
 function HomeCard(props) {
   const {
-    setRegisterUsername,
-    setRegisterPassword,
+    setRegisterUser,
     setLoginUsername,
     setLoginPassword,
     getUser,
@@ -12,9 +11,8 @@ function HomeCard(props) {
     register,
     data,
     createAccount,
-    setRegisterEmail,
-    setRegisterZipCode,
   } = props;
+  //   const { username, password, email, zipCode } = setRegisterUser;
   return (
     <div>
       <div>
@@ -26,19 +24,19 @@ function HomeCard(props) {
         <h1>Register</h1>
         <input
           placeholder="Username"
-          onChange={(e) => setRegisterUsername(e.target.value)}
+          onChange={(e) => setRegisterUser({ username: e.target.value })}
         />
         <input
           placeholder="Password"
-          onChange={(e) => setRegisterPassword(e.target.value)}
+          onChange={(e) => setRegisterUser({ password: e.target.value })}
         />
         <input
           placeholder="Email"
-          onChange={(e) => setRegisterEmail(e.target.value)}
+          onChange={(e) => setRegisterUser({ email: e.target.value })}
         />
         <input
           placeholder="Zip Code"
-          onChange={(e) => setRegisterZipCode(e.target.value)}
+          onChange={(e) => setRegisterUser({ zipCode: e.target.value })}
         />
         <button onClick={register}>Submit</button>
       </div>
