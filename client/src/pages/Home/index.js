@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import "../styles/home.css";
 
 function App() {
   const [registerUsername, setRegisterUsername] = useState("");
@@ -56,6 +57,7 @@ function App() {
 
       <div>
         <h1>Login</h1>
+        <div className= "login">
         <input
           placeholder="username"
           onChange={(e) => setLoginUsername(e.target.value)}
@@ -65,6 +67,7 @@ function App() {
           onChange={(e) => setLoginPassword(e.target.value)}
         />
         <button onClick={login}>Submit</button>
+      </div>
       </div>
 
       <div>
