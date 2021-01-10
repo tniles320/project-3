@@ -4,40 +4,40 @@ import HomeCard from "../../components/HomeCard";
 import "./style.css";
 
 function Home() {
-  const [registerUser, setRegisterUser] = useState({
-    username: "",
-    password: "",
-    email: "",
-    zipCode: "",
-  });
-  // const [registerPassword, setRegisterPassword] = useState("");
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
   const [data, setData] = useState(null);
+
+  // register user function
   const register = () => {
+    const userInput = document.getElementById("register-info").childNodes;
     Axios({
       method: "POST",
       data: {
-        username: registerUser.username,
-        password: registerUser.password,
-        email: registerUser.email,
-        zipCode: registerUser.zipCode,
+        username: userInput[1].value,
+        password: userInput[2].value,
+        email: userInput[3].value,
+        zipCode: userInput[4].value,
       },
       withCredentials: true,
       url: "http://localhost:3001/register",
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      console.log(res);
+    });
   };
+  // user login function
   const login = () => {
+    const loginInput = document.querySelector(".login").childNodes;
     Axios({
       method: "POST",
       data: {
-        username: loginUsername,
-        password: loginPassword,
+        username: loginInput[0].value,
+        password: loginInput[1].value,
       },
       withCredentials: true,
       url: "http://localhost:3001/login",
     }).then((res) => console.log(res));
   };
+
+  // get user function
   const getUser = () => {
     Axios({
       method: "GET",
@@ -55,17 +55,11 @@ function Home() {
     <div className="App">
       <h1>ManyGigs</h1>
       <HomeCard
-        setRegisterUser={setRegisterUser}
-        // setRegisterPassword={setRegisterPassword}
-        setLoginUsername={setLoginUsername}
-        setLoginPassword={setLoginPassword}
         getUser={getUser}
         login={login}
         register={register}
         data={data}
         createAccount={createAccount}
-        // setRegisterEmail={setRegisterEmail}
-        // setRegisterZipCode={setRegisterZipCode}
       />
     </div>
   );

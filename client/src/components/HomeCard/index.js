@@ -2,17 +2,7 @@ import React from "react";
 import "./style.css";
 
 function HomeCard(props) {
-  const {
-    setRegisterUser,
-    setLoginUsername,
-    setLoginPassword,
-    getUser,
-    login,
-    register,
-    data,
-    createAccount,
-  } = props;
-  //   const { username, password, email, zipCode } = setRegisterUser;
+  const { getUser, login, register, data, createAccount } = props;
   return (
     <div>
       <div>
@@ -22,36 +12,18 @@ function HomeCard(props) {
       </div>
       <div id="register-info">
         <h1>Register</h1>
-        <input
-          placeholder="Username"
-          onChange={(e) => setRegisterUser({ username: e.target.value })}
-        />
-        <input
-          placeholder="Password"
-          onChange={(e) => setRegisterUser({ password: e.target.value })}
-        />
-        <input
-          placeholder="Email"
-          onChange={(e) => setRegisterUser({ email: e.target.value })}
-        />
-        <input
-          placeholder="Zip Code"
-          onChange={(e) => setRegisterUser({ zipCode: e.target.value })}
-        />
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <input type="email" placeholder="Email" />
+        <input type="number" placeholder="Zip Code" />
         <button onClick={register}>Submit</button>
       </div>
 
       <div>
         <h1>Login</h1>
         <div className="login">
-          <input
-            placeholder="username"
-            onChange={(e) => setLoginUsername(e.target.value)}
-          />
-          <input
-            placeholder="password"
-            onChange={(e) => setLoginPassword(e.target.value)}
-          />
+          <input type="text" placeholder="username" />
+          <input type="password" placeholder="password" />
           <button onClick={login}>Submit</button>
         </div>
       </div>
