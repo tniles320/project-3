@@ -5,14 +5,18 @@ function HomeCard(props) {
   const { getUser, login, register, data, createAccount } = props;
   return (
     <div>
-      
-      <div className ="create-account">Are you looking for work or looking to get some work done? 
-      </div><p>Create an account to find a local job or to post a job offer. Once your account is created you will be able to 
-        post what gigs you are looking for in your neighborhood. Whether it's assembling furniture, setting up
-        surround sound, walking a dog, or creating an interactive website. MANY GIGS is YOUR SPOT!
-      </p>
 
-      <div className ="create-btn">
+      <div className="create-account">
+        Are you looking for work or looking to get some work done?
+      </div>
+      <p>
+        Create an account to find a local job or to post a job offer. Once your
+        account is created you will be able to post what gigs you are looking
+        for in your neighborhood. Whether it's assembling furniture, setting up
+        surround sound, walking a dog, or creating an interactive website. MANY
+        GIGS is YOUR SPOT!
+      </p>
+      <div className="create-btn">
         <button id="create-account" onClick={createAccount}>
           Create new account
         </button>

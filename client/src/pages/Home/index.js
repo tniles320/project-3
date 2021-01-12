@@ -20,7 +20,18 @@ function Home() {
       withCredentials: true,
       url: "http://localhost:3001/register",
     }).then((res) => {
-      console.log(res);
+      Axios({
+        method: "POST",
+        data: {
+          username: userInput[1].value,
+          password: userInput[2].value,
+        },
+        withCredentials: true,
+        url: "http://localhost:3001/login",
+      }).then((res) => {
+        console.log(res);
+        window.location.replace("/dashboard");
+      });
     });
   };
   // user login function
@@ -34,7 +45,10 @@ function Home() {
       },
       withCredentials: true,
       url: "http://localhost:3001/login",
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      console.log(res);
+      window.location.replace("/dashboard");
+    });
   };
 
   // get user function
