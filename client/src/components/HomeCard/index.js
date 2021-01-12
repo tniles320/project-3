@@ -5,6 +5,7 @@ function HomeCard(props) {
   const { getUser, login, register, data, createAccount } = props;
   return (
     <div>
+
       <div className="create-account">
         Are you looking for work or looking to get some work done?
       </div>
@@ -19,7 +20,8 @@ function HomeCard(props) {
         <button id="create-account" onClick={createAccount}>
           Create new account
         </button>
-      </div>
+        </div>
+       
       <div id="register-info">
         <h1>Register</h1>
         <input type="text" placeholder="Username" />
