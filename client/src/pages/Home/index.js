@@ -53,7 +53,6 @@ function Home() {
   };
   return (
     <div className="App">
-      <h1>ManyGigs</h1>
       <HomeCard
         getUser={getUser}
         login={login}
