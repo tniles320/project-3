@@ -25,6 +25,12 @@ const UserSchema = new Schema({
     trim: true,
     required: "Zip code is required",
   },
+  rating: [
+    {
+      type: Number,
+      trim: true,
+    },
+  ],
   posts: [
     {
       type: Schema.Types.ObjectId,

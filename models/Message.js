@@ -3,10 +3,15 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const MessageSchema = new Schema({
-  userId: {
+  user: {
     type: String,
     trim: true,
-    required: "User ID is required",
+    required: "User is required",
+  },
+  post: {
+    type: String,
+    trim: true,
+    required: "Post is required",
   },
   body: {
     type: String,
