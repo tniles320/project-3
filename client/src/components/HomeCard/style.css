@@ -5,10 +5,14 @@
 .create-account {
     display: flex;
     justify-content: center;
-    align-items: center; 
+   
+    margin: 3%;
+}
+
+.header {
+    text-align: center; 
     font-family: 'Poiret One', cursive;
     font-size: xx-large;
-    margin: 3%;
 }
 
 #create-account {
@@ -23,7 +27,9 @@
     margin: 0 0 1.5rem;
     position: relative;
     text-align: center;
+
     border-radius: 2rem;
+
     display: inline-block;
     padding: 1rem;
     font-size: 1rem;
@@ -31,12 +37,29 @@
     color:black;  
 }
 
+
 .create-btn {
+
     display: flex;
     justify-content: center;
     align-items: center;  
 }
+
 p {
+
     font-size: x-large;
     margin: 3%;
 }
+
+.description {
+    float: left;
+    width: 500px;
+}
+
+.register-container {
+   margin-top: auto;
+    float: right;
+    width: 500px;
+}
+
+
