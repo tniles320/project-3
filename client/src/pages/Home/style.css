@@ -1,3 +1,11 @@
+body {
+    background: linear-gradient(90deg, rgb(110, 94, 254) 0%, rgba(73,63,252,1) 100%); 
+}
+
+.App {
+    background-color: whitesmoke;
+    margin: 5%;
+}
 h1 {
     font-weight: bolder;
     text-decoration: underline;
