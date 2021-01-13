@@ -24,14 +24,8 @@ function App() {
     loggedIn: false,
   });
 
-  useEffect(() => {
-    document.title = "ManyGigs";
-
-    if (!user) {
-      return;
-    }
-
-    API.getUser(user).then((res) => {
+  const handleUser = () => {
+    API.getUser().then((res) => {
       if (res.data) {
         setUser({
           username: res.data.username,
@@ -43,7 +37,11 @@ function App() {
         });
       }
     });
-  }, [user]);
+  };
+
+  useEffect(() => {
+    handleUser();
+  }, []);
 
   const logout = (event) => {
     event.preventDefault();
@@ -63,38 +61,21 @@ function App() {
       }
     });
   };
+  console.log(user);
 
-  if (user.loggedIn) {
-    return (
-      <Router>
-        <div>
-          <UserContext.Provider value={user}>
-            <Switch>
-              <Route exact path="/">
-                <Redirect to="/dashboard" />
-              </Route>
-              <Route>
-                <Navbar logout={logout} />
-                <Dashboard exact path="/dashboard" />
-              </Route>
-              <Route>
-                <Account exact path="/account" logout={logout} />
-              </Route>
-              <Route>
-                <NoMatch />
-              </Route>
-            </Switch>
-          </UserContext.Provider>
-        </div>
-      </Router>
-    );
-  } else {
-    return (
+  return (
+    <UserContext.Provider value={user}>
       <Router>
         <div>
           <Switch>
-            <Route>
-              <Home exact path="/" />
+            <Route exact path="/">
+              {user.loggedIn ? <Dashboard /> : <Home handleUser={handleUser} />}
+            </Route>
+            <Route exact path="/account">
+              {user.loggedIn ? <Account logout={logout} /> : <Home />}
+            </Route>
+            <Route exact path="/dashboard">
+              {user.loggedIn ? <Dashboard logout={logout} /> : <Home />}
             </Route>
             <Route>
               <NoMatch />
@@ -102,8 +83,8 @@ function App() {
           </Switch>
         </div>
       </Router>
-    );
-  }
+    </UserContext.Provider>
+  );
 }
 
 export default App;

@@ -38,6 +38,10 @@ module.exports = function (app) {
     res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
   });
 
+  app.get("/account", (req, res) => {
+    res.send(req.user);
+  });
+
   app.get("/account/id:", (req, res) => {
     User.findOne({ _id: req.params.id }, (err) => {
       if (err) throw err;
