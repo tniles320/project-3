@@ -3,7 +3,7 @@ import Axios from "axios";
 import HomeCard from "../../components/HomeCard";
 import "./style.css";
 
-function Home() {
+function Home(props) {
   const [data, setData] = useState(null);
 
   // register user function
@@ -12,10 +12,10 @@ function Home() {
     Axios({
       method: "POST",
       data: {
-        username: userInput[1].value,
-        password: userInput[2].value,
-        email: userInput[3].value,
-        zipCode: userInput[4].value,
+        username: userInput[0].value,
+        password: userInput[1].value,
+        email: userInput[2].value,
+        zipCode: userInput[3].value,
       },
       withCredentials: true,
       url: "http://localhost:3001/register",
@@ -23,14 +23,14 @@ function Home() {
       Axios({
         method: "POST",
         data: {
-          username: userInput[1].value,
-          password: userInput[2].value,
+          username: userInput[0].value,
+          password: userInput[1].value,
         },
         withCredentials: true,
         url: "http://localhost:3001/login",
       }).then((res) => {
         console.log(res);
-        window.location.replace("/dashboard");
+        // props.handleUser();
       });
     });
   };
@@ -40,14 +40,14 @@ function Home() {
     Axios({
       method: "POST",
       data: {
-        username: loginInput[0].value,
-        password: loginInput[1].value,
+        username: loginInput[1].value,
+        password: loginInput[3].value,
       },
       withCredentials: true,
       url: "http://localhost:3001/login",
     }).then((res) => {
       console.log(res);
-      window.location.replace("/dashboard");
+      props.handleUser();
     });
   };
 

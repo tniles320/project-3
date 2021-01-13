@@ -68,17 +68,14 @@ function App() {
       <Router>
         <div>
           <Switch>
-            <Route
-              exact
-              path="/"
-              component={user.loggedIn ? Dashboard : Home}
-            />
+            <Route exact path="/">
+              {user.loggedIn ? <Dashboard /> : <Home handleUser={handleUser} />}
+            </Route>
             <Route exact path="/account">
-              <Account logout={logout} />
+              {user.loggedIn ? <Account logout={logout} /> : <Home />}
             </Route>
             <Route exact path="/dashboard">
-              <Navbar logout={logout} />
-              <Dashboard />
+              {user.loggedIn ? <Dashboard logout={logout} /> : <Home />}
             </Route>
             <Route>
               <NoMatch />
