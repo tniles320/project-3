@@ -1,5 +1,11 @@
 import React from "react";
 import "./style.css";
+import gigspic from "../../assets/gigs1.jpg"
+//import { Button } from 'react-native-elements';
+//import ReactDOM from 'react-dom'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { fas fa-comment-dollar } from '@fortawesome/free-solid-svg-icons'
+
 
 function HomeCard(props) {
   const { handleLogin, handleRegister, createAccount } = props;
@@ -12,20 +18,27 @@ function HomeCard(props) {
       <div className="create-account">
         <div className="description">
           <p>
-            Create an account to find a local job or to post a job offer. Once
-            your account is created you will be able to post what gigs you are
-            looking for in your neighborhood. Whether it's assembling furniture,
+            Need a job nearby? Looking for some work to be done? Whether it's assembling furniture,
             setting up surround sound, walking a dog, or creating an interactive
-            website. MANY GIGS is YOUR SPOT!
+            website. MANY GIGS is for YOU! 
           </p>
-          <button id="create-account" onClick={createAccount}>
-            Create new account
-          </button>
+          <h1>Login</h1>
+          <div className="login">
+            
+            <input type="text" id="username-login" placeholder="username" />
+            
+            <input type="password" id="password-login" placeholder="password" />
+            <p></p>
+            <button id ="loginBtn"onClick={handleLogin}>Submit</button>
+          </div>
         </div>
 
         <div className="register-container">
+        <button id="create-account" onClick={createAccount}>
+            Create new account
+          </button>
           <div>
-            <h1>Register</h1>
+            
             <form id="register-info">
               <input type="text" id="username-input" placeholder="Username" />
               <input
@@ -35,20 +48,17 @@ function HomeCard(props) {
               />
               <input type="email" id="email-input" placeholder="Email" />
               <input type="text" id="zip-input" placeholder="Zip Code" />
-              <button onClick={handleRegister}>Submit</button>
+
+              <button id ="regBtn"onClick={handleRegister}>Submit</button>
+              <p>Once your account is complete you will be able to post and or accept job offers of all kinds.</p>
             </form>
-          </div>
 
-          <h1>Login</h1>
-          <div className="login">
-            <p>Username</p>
-            <input type="text" id="username-login" placeholder="username" />
-            <p>Password</p>
-            <input type="password" id="password-login" placeholder="password" />
-            <p></p>
-            <button onClick={handleLogin}>Submit</button>
+          
           </div>
+          
 
+          <div className="logo">ManyGigs<i class="fas fa-comment-dollar"></i>
+      </div>
         </div>
       </div>
     </div>

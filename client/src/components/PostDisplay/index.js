@@ -10,6 +10,7 @@ function PostDisplay(props) {
           <div>
             <div>{post.title}</div>
             <div>{post.location}</div>
+            <div>{post.description}</div>
           </div>
         );
       })}

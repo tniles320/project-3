@@ -36,6 +36,7 @@ function Home(props) {
   const createAccount = () => {
     document.getElementById("register-info").style.visibility = "visible";
   };
+  
   return (
     <div className="App">
       <HomeCard

@@ -1,45 +1,51 @@
 #register-info {
     visibility: hidden;
+    border-style: solid;
+    border-color: rgb(110, 94, 254);
+    border-width: 3px;
 }
 
 .create-account {
     display: flex;
     justify-content: center;
-   
     margin: 3%;
 }
 
 .header {
+    padding-top: 3%;
+    display: flex;
+    justify-content: center;
     text-align: center; 
-    font-family: 'Poiret One', cursive;
+    font-family: 'Poppins', sans-serif;
     font-size: xx-large;
 }
 
 #create-account {
     display: flex;
-    justify-content: center;
-    align-items: center; 
+    justify-content:right;
+    align-items: top; 
     border-style: solid;
     cursor: pointer;
     font-family: 'Merienda';
     font-weight: normal;
     line-height: normal;
     margin: 0 0 1.5rem;
-    position: relative;
+    position: right;
     text-align: center;
-
     border-radius: 2rem;
-
     display: inline-block;
     padding: 1rem;
     font-size: 1rem;
-    background-color: linear-gradient(90deg, rgb(44, 22, 243) 0%,  100%);
     color:black;  
 }
-
+#create-account:hover{
+    transition: all ease .5s .25s;
+    background-color:rgb(110, 94, 254);  
+    color:white;
+    transition: 250ms;
+}
 
 p {
-
     font-size: x-large;
     margin: 3%;
 }
@@ -50,16 +56,16 @@ p {
 }
 
 .register-container {
-   margin-top: auto;
+   margin-top: 0%;
     float: right;
     width: 500px;
 }
 
 .register-container input{
     margin: 2%;
-    height: 25px;
-    width: 40%;
-    font-size: 12pt;
+    height: 35px;
+    width: 70%;
+    font-size: 16pt;
     
 }
     
@@ -79,9 +85,55 @@ p {
     display: inline-block;
     padding: 1rem;
     font-size: 1rem;
-    background-color: linear-gradient(90deg, rgb(44, 22, 243) 0%,  100%);
-    color:black;  
+    color:black;
 }
 
+#regBtn:hover{
+    
+    transition: all ease .5s .25s;
+    background-color:rgb(110, 94, 254);  
+    color:white;
+    transition: 250ms;
+}
 
+.login {
+    text-align: center;
+}
 
+.login input {
+    height: 30px;
+    width: 75%;
+    font-size: 16pt;
+    margin: 10px;
+}
+#loginBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-style: solid;
+    cursor: pointer;
+    font-family: 'Merienda';
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.5rem;
+    position: relative;
+    text-align: center;
+    border-radius: 2rem;
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1rem;
+    color:black; 
+}
+#loginBtn:hover{
+    
+    transition: all ease .5s .25s;
+    background-color:rgb(110, 94, 254);  
+    color:white;
+    transition: 250ms;
+}
+.logo{
+    font-size:x-large;
+    color:rgb(110, 94, 254);
+   float:right;
+   margin:2%
+}
