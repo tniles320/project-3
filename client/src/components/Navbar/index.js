@@ -4,7 +4,7 @@ import { Button } from "../NavbarBtn";
 import "./Navbar.css";
 
 function Navbar(props) {
-  const { logout } = props;
+  const { handleLogout } = props;
   //For button
   const [navBtn, setNavBtn] = useState({
     clicked: false,
@@ -35,7 +35,7 @@ function Navbar(props) {
         })}
       </ul>
       <button>Search</button>
-      <button onClick={logout}>Logout</button>
+      <button onClick={handleLogout}>Logout</button>
     </nav>
   );
 }
