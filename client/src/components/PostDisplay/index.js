@@ -5,9 +5,9 @@ function PostDisplay(props) {
   const { userPosts } = props;
   return (
     <div>
-      {userPosts.map((post) => {
+      {userPosts.map((post, index) => {
         return (
-          <div>
+          <div key={index}>
             <div>{post.title}</div>
             <div>{post.location}</div>
           </div>

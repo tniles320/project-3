@@ -59,6 +59,12 @@ module.exports = function (app) {
       });
     });
   });
+  // gets all posts to display on dashboard
+  app.get("/dashboard", (req, res) => {
+    Post.find({}).then((dbPost) => {
+      res.send(dbPost);
+    });
+  });
   app.get("/user", (req, res) => {
     res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
   });

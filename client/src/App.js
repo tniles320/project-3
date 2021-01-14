@@ -14,6 +14,7 @@ import UserContext from "./utils/UserContext";
 import API from "./utils/API";
 
 function App() {
+  let loggedIn = false;
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -24,10 +25,10 @@ function App() {
   });
 
   // sets user state when the page is loaded
-  const handleUser = () => {
-    API.getUser().then((res) => {
+  const handleUser = async () => {
+    await API.getUser().then((res) => {
       if (res.data) {
-        setUser({
+        return setUser({
           username: res.data.username,
           email: res.data.email,
           zipCode: res.data.zipCode,
@@ -80,18 +81,18 @@ function App() {
               {user.loggedIn ? (
                 <Account handleLogout={handleLogout} />
               ) : (
-                <Home />
+                <Home handleUser={handleUser} />
               )}
             </Route>
             <Route exact path="/dashboard">
               {user.loggedIn ? (
                 <Dashboard handleLogout={handleLogout} />
               ) : (
-                <Home />
+                <Home handleUser={handleUser} />
               )}
             </Route>
             <Route exact path="/post">
-              {user.loggedIn ? <Post /> : <Home />}
+              {user.loggedIn ? <Post /> : <Home handleUser={handleUser} />}
             </Route>
             <Route>
               <NoMatch />

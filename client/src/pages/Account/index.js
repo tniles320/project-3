@@ -14,7 +14,7 @@ function Account() {
       res.data.map((post) => {
         let postObj = {
           user: post.user,
-          username: post.user,
+          username: post.username,
           title: post.title,
           description: post.description,
           amount: post.amount,
