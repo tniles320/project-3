@@ -6,7 +6,6 @@ const UserContext = React.createContext({
   zipCode: "",
   rating: "",
   posts: [],
-  loggedIn: false,
 });
 
 export default UserContext;
