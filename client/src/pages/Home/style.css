@@ -19,8 +19,27 @@ h1 {
 }
 
 .login input {
-    height: 40px;
-    width: 30%;
-    font-size: 18pt;
+    height: 30px;
+    width: 40%;
+    font-size: 16pt;
     margin: 10px;
+}
+#loginBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-style: solid;
+    cursor: pointer;
+    font-family: 'Merienda';
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.5rem;
+    position: relative;
+    text-align: center;
+    border-radius: 2rem;
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: linear-gradient(90deg, rgb(44, 22, 243) 0%,  100%);
+    color:black; 
 }

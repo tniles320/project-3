@@ -38,13 +38,6 @@
 }
 
 
-.create-btn {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-}
-
 p {
 
     font-size: x-large;
@@ -61,5 +54,34 @@ p {
     float: right;
     width: 500px;
 }
+
+.register-container input{
+    margin: 2%;
+    height: 25px;
+    width: 40%;
+    font-size: 12pt;
+    
+}
+    
+#regBtn{
+    display: flex;
+    justify-content:right;
+    align-items:flex-end; 
+    border-style: solid;
+    cursor: pointer;
+    font-family: 'Merienda';
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.1rem;
+    position: relative;
+    text-align: center;
+    border-radius: 2rem;
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: linear-gradient(90deg, rgb(44, 22, 243) 0%,  100%);
+    color:black;  
+}
+
 
 

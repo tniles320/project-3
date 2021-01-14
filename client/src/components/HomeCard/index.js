@@ -18,6 +18,9 @@ function HomeCard(props) {
             setting up surround sound, walking a dog, or creating an interactive
             website. MANY GIGS is YOUR SPOT!
           </p>
+          <button id="create-account" onClick={createAccount}>
+            Create new account
+          </button>
         </div>
 
         <div className="register-container">
@@ -28,23 +31,20 @@ function HomeCard(props) {
               <input type="password" placeholder="Password" />
               <input type="email" placeholder="Email" />
               <input type="number" placeholder="Zip Code" />
-              <button onClick={register}>Submit</button>
+              <button id="regBtn"onClick={register}>Submit</button>
             </form>
           </div>
 
           <h1>Login</h1>
           <div className="login">
-            <p>Username</p>
+            <p></p>
             <input type="text" placeholder="username" />
-            <p>Password</p>
+            <p></p>
             <input type="password" placeholder="password" />
             <p></p>
-            <button onClick={login}>Submit</button>
+            <button id ="loginBtn"onClick={login}>Submit</button>
           </div>
 
-          <button id="create-account" onClick={createAccount}>
-            Create new account
-          </button>
         </div>
       </div>
     </div>
