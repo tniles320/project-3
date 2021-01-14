@@ -6,7 +6,7 @@ function Dashboard(props) {
   const { username, email, zipCode, rating, posts } = useContext(UserContext);
   return (
     <div>
-      <Navbar logout={props.logout} />
+      <Navbar handleLogout={props.handleLogout} />
       {username} {email} {zipCode} {rating} {posts}
     </div>
   );

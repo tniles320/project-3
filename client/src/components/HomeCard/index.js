@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 
 function HomeCard(props) {
-  const { login, register, createAccount } = props;
+  const { handleLogin, handleRegister, createAccount } = props;
   return (
     <div>
       <h3 className="header">
@@ -24,22 +24,26 @@ function HomeCard(props) {
           <div>
             <h1>Register</h1>
             <form id="register-info">
-              <input type="text" placeholder="Username" />
-              <input type="password" placeholder="Password" />
-              <input type="email" placeholder="Email" />
-              <input type="number" placeholder="Zip Code" />
-              <button onClick={register}>Submit</button>
+              <input type="text" id="username-input" placeholder="Username" />
+              <input
+                type="password"
+                id="password-input"
+                placeholder="Password"
+              />
+              <input type="email" id="email-input" placeholder="Email" />
+              <input type="text" id="zip-input" placeholder="Zip Code" />
+              <button onClick={handleRegister}>Submit</button>
             </form>
           </div>
 
           <h1>Login</h1>
           <div className="login">
             <p>Username</p>
-            <input type="text" placeholder="username" />
+            <input type="text" id="username-login" placeholder="username" />
             <p>Password</p>
-            <input type="password" placeholder="password" />
+            <input type="password" id="password-login" placeholder="password" />
             <p></p>
-            <button onClick={login}>Submit</button>
+            <button onClick={handleLogin}>Submit</button>
           </div>
 
           <button id="create-account" onClick={createAccount}>

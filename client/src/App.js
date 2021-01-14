@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Account from "./pages/Account";
-import Navbar from "./components/Navbar";
+import Post from "./pages/Post";
 import {
   BrowserRouter as Router,
   Route,
@@ -10,7 +10,6 @@ import {
   Redirect,
 } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
-import Axios from "axios";
 import UserContext from "./utils/UserContext";
 import API from "./utils/API";
 
@@ -24,6 +23,7 @@ function App() {
     loggedIn: false,
   });
 
+  // sets user state when the page is loaded
   const handleUser = () => {
     API.getUser().then((res) => {
       if (res.data) {
@@ -43,7 +43,8 @@ function App() {
     handleUser();
   }, []);
 
-  const logout = (event) => {
+  // logout function with axios call utilizing API
+  const handleLogout = (event) => {
     event.preventDefault();
 
     API.logout().then((res) => {
@@ -69,13 +70,28 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/">
-              {user.loggedIn ? <Dashboard /> : <Home handleUser={handleUser} />}
+              {user.loggedIn ? (
+                <Dashboard handleLogout={handleLogout} />
+              ) : (
+                <Home handleUser={handleUser} />
+              )}
             </Route>
             <Route exact path="/account">
-              {user.loggedIn ? <Account logout={logout} /> : <Home />}
+              {user.loggedIn ? (
+                <Account handleLogout={handleLogout} />
+              ) : (
+                <Home />
+              )}
             </Route>
             <Route exact path="/dashboard">
-              {user.loggedIn ? <Dashboard logout={logout} /> : <Home />}
+              {user.loggedIn ? (
+                <Dashboard handleLogout={handleLogout} />
+              ) : (
+                <Home />
+              )}
+            </Route>
+            <Route exact path="/post">
+              {user.loggedIn ? <Post /> : <Home />}
             </Route>
             <Route>
               <NoMatch />
