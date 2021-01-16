@@ -65,9 +65,17 @@ module.exports = function (app) {
     });
   });
   app.get("/user", (req, res) => {
-    User.findOne({ username: req.user.username }).then((dbUser) => {
-      res.send(dbUser); // The req.user stores the entire user that has been authenticated inside of it.
-    });
+    if(req.user) {
+      User.findOne({ username: req.user.username }).then((dbUser) => {
+        res.send(dbUser); // The req.user stores the entire user that has been authenticated inside of it.
+      });
+    } else {
+      res.json({
+        error : true, 
+        error_message : "cannot fetch user if not logged in "
+      })
+    }
+
   });
 
   // sends user info on account page

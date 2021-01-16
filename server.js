@@ -8,6 +8,24 @@ const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const bodyParser = require("body-parser");
+const multer = require("multer");
+const { createBrotliCompress } = require("zlib");
+
+//Set Storage Engine
+const storage = multer.diskStorage({
+  destination: './public/uploads/',
+  filename: function(req, file, cb){
+  cb(null, file.fieldname + '-' + Date.now() + 
+  path.extname(file.originalname));
+  }
+});
+
+//Init Upload 
+const upload = multer ({
+  storage: storage,
+  limits:{filesize: 10}
+}).single("photo-upload");
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -50,9 +68,23 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/user", {
 
 // Send every other request to the React app
 // Define any API routes before this runs
+
+
+app.post('/upload', (req, res) => {
+  upload((err) => {
+    if(err){
+      res.render("index", {msg : err})
+    } else {
+      console.log(req.file)
+      res.send("test")
+    }
+  })
+})
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
