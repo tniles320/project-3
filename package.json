@@ -20,14 +20,11 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
-=======
->>>>>>> da1920e5ce7a5475587dd04e0adbaa54a90604d9
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
@@ -38,10 +35,7 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.11.10",
     "morgan": "^1.10.0",
-<<<<<<< HEAD
     "multer": "^1.4.2",
-=======
->>>>>>> da1920e5ce7a5475587dd04e0adbaa54a90604d9
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react-router-dom": "^5.2.0"
