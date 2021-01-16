@@ -3,8 +3,9 @@ import CurrentUserPost from "../../components/CurrentUserPost";
 import NonUserPost from "../../components/NonUserPost";
 import API from "../../utils/API";
 import UserContext from "../../utils/UserContext";
+import Navbar from "../../components/Navbar";
 
-function SinglePost() {
+function SinglePost(props) {
   const { id } = useContext(UserContext);
   const [singlePost, setSinglePost] = useState({});
 
@@ -44,12 +45,14 @@ function SinglePost() {
   if (singlePost.currentUser) {
     return (
       <div>
+        <Navbar handleLogout={props.handleLogout} />
         <CurrentUserPost singlePost={singlePost} />
       </div>
     );
   } else {
     return (
       <div>
+        <Navbar handleLogout={props.handleLogout} />
         <NonUserPost singlePost={singlePost} />
       </div>
     );

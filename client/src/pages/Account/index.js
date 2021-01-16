@@ -2,8 +2,9 @@ import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../../utils/UserContext";
 import API from "../../utils/API";
 import PostContainer from "../../components/PostContainer";
+import Navbar from "../../components/Navbar";
 
-function Account() {
+function Account(props) {
   const { username, email, zipCode, rating } = useContext(UserContext);
 
   const [posts, setPosts] = useState([]);
@@ -36,6 +37,7 @@ function Account() {
       {email}
       {zipCode}
       {rating}
+      <Navbar handleLogout={props.handleLogout} />
       <PostContainer posts={posts} />
     </div>
   );
