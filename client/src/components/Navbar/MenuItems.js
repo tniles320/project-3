@@ -1,7 +1,11 @@
 export const MenuItems = [
   {
     title: "Home",
+<<<<<<< HEAD
     url: "#",
+=======
+    url: "/dashboard",
+>>>>>>> 22338f39200e8900456d2313146958ea3188473c
     cName: "nav-links",
   },
   {

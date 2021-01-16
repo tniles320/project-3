@@ -1,6 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import UserContext from "../../utils/UserContext";
 import Navbar from "../../components/Navbar";
+<<<<<<< HEAD
+=======
+import Sidebar from "../../components/Sidebar";
+>>>>>>> 22338f39200e8900456d2313146958ea3188473c
 import PostContainer from "../../components/PostContainer";
 import API from "../../utils/API";
 
@@ -32,6 +36,7 @@ function Dashboard(props) {
   return (
     <div>
       <Navbar handleLogout={props.handleLogout} />
+<<<<<<< HEAD
 
       <PostContainer posts={posts} />
 
@@ -81,6 +86,10 @@ function Dashboard(props) {
        </fieldset>
     </form>
 
+=======
+      <Sidebar />
+      <PostContainer posts={posts} />
+>>>>>>> 22338f39200e8900456d2313146958ea3188473c
     </div>
   );
 }

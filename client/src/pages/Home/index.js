@@ -33,7 +33,13 @@ function Home(props) {
   // shows input forms for user to create account
   const createAccount = () => {
     document.getElementById("register-info").style.visibility = "visible";
+<<<<<<< HEAD
   };
+=======
+    document.getElementById("create-account").style.visibility = "hidden"
+  };
+  
+>>>>>>> 22338f39200e8900456d2313146958ea3188473c
   return (
     <div className="App">
       <HomeCard

@@ -11,6 +11,7 @@ function HomeCard(props) {
 
       <div className="create-account">
         <div className="description">
+<<<<<<< HEAD
           <p>
             Create an account to find a local job or to post a job offer. Once
             your account is created you will be able to post what gigs you are
@@ -23,6 +24,25 @@ function HomeCard(props) {
         <div className="register-container">
           <div>
             <h1>Register</h1>
+=======
+          <h1>Login</h1>
+          <div className="login">
+            <input type="text" id="username-login" placeholder="username" />
+
+            <input type="password" id="password-login" placeholder="password" />
+            <p></p>
+            <button id="loginBtn" onClick={handleLogin}>
+              Submit
+            </button>
+          </div>
+        </div>
+
+        <div className="register-container">
+          <button id="create-account" onClick={createAccount}>
+            Create new account
+          </button>
+          <div>
+>>>>>>> 22338f39200e8900456d2313146958ea3188473c
             <form id="register-info">
               <input type="text" id="username-input" placeholder="Username" />
               <input
@@ -32,6 +52,7 @@ function HomeCard(props) {
               />
               <input type="email" id="email-input" placeholder="Email" />
               <input type="text" id="zip-input" placeholder="Zip Code" />
+<<<<<<< HEAD
               <button onClick={handleRegister}>Submit</button>
             </form>
           </div>
@@ -49,6 +70,22 @@ function HomeCard(props) {
           <button id="create-account" onClick={createAccount}>
             Create new account
           </button>
+=======
+
+              <button id="regBtn" onClick={handleRegister}>
+                Submit
+              </button>
+              <p>
+                Once your account is complete you will be able to post or accept
+                job offers of all kinds.
+              </p>
+            </form>
+          </div>
+
+          <div className="logo">
+            ManyGigs<i className="fas fa-comment-dollar"></i>
+          </div>
+>>>>>>> 22338f39200e8900456d2313146958ea3188473c
         </div>
       </div>
     </div>
