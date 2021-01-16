@@ -35,6 +35,7 @@ function Home(props) {
   // shows input forms for user to create account
   const createAccount = () => {
     document.getElementById("register-info").style.visibility = "visible";
+    document.getElementById("create-account").style.visibility = "hidden"
   };
   
   return (

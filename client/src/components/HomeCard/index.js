@@ -17,11 +17,6 @@ function HomeCard(props) {
 
       <div className="create-account">
         <div className="description">
-          <p>
-            Need a job nearby? Looking for some work to be done? Whether it's assembling furniture,
-            setting up surround sound, walking a dog, or creating an interactive
-            website. MANY GIGS is for YOU! 
-          </p>
           <h1>Login</h1>
           <div className="login">
             
@@ -50,7 +45,7 @@ function HomeCard(props) {
               <input type="text" id="zip-input" placeholder="Zip Code" />
 
               <button id ="regBtn"onClick={handleRegister}>Submit</button>
-              <p>Once your account is complete you will be able to post and or accept job offers of all kinds.</p>
+              <p>Once your account is complete you will be able to post or accept job offers of all kinds.</p>
             </form>
 
           

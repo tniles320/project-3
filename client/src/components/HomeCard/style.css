@@ -3,6 +3,8 @@
     border-style: solid;
     border-color: rgb(110, 94, 254);
     border-width: 3px;
+    border-radius: 1.5rem;
+    padding: 5%;
 }
 
 .create-account {
@@ -21,6 +23,7 @@
 }
 
 #create-account {
+    visibility: visible;
     display: flex;
     justify-content:right;
     align-items: top; 
@@ -64,7 +67,7 @@ p {
 .register-container input{
     margin: 2%;
     height: 35px;
-    width: 70%;
+    width: 80%;
     font-size: 16pt;
     
 }
@@ -98,13 +101,20 @@ p {
 
 .login {
     text-align: center;
+   /* border-style: solid;
+    border-width: 3px;
+    margin: 3%;
+    border-radius: 1.5rem; 
+    border-color: rgb(110, 94, 254);
+    padding: 5%;
+    */
 }
 
 .login input {
-    height: 30px;
-    width: 75%;
+    height: 35px;
+    width: 80%;
     font-size: 16pt;
-    margin: 10px;
+    margin: 2%;
 }
 #loginBtn{
     display: flex;
