@@ -1,18 +1,19 @@
 import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../../utils/UserContext";
 import API from "../../utils/API";
-import PostDisplay from "../../components/PostDisplay";
+import PostContainer from "../../components/PostContainer";
 
 function Account() {
-  const { username, email, zipCode, rating, posts } = useContext(UserContext);
+  const { username, email, zipCode, rating } = useContext(UserContext);
 
-  const [userPosts, setUserPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   // uses axios call to push user posts to state
   const handleUserPosts = () => {
     API.findUserPosts().then((res) => {
       res.data.map((post) => {
         let postObj = {
+          id: post._id,
           user: post.user,
           username: post.username,
           title: post.title,
@@ -20,7 +21,7 @@ function Account() {
           amount: post.amount,
           location: post.location,
         };
-        setUserPosts((userPosts) => [...userPosts, postObj]);
+        setPosts((posts) => [...posts, postObj]);
       });
     });
   };
@@ -35,7 +36,7 @@ function Account() {
       {email}
       {zipCode}
       {rating}
-      <PostDisplay userPosts={userPosts} />
+      <PostContainer posts={posts} />
     </div>
   );
 }

@@ -12,7 +12,6 @@ module.exports = function (app) {
         req.logIn(user, (err) => {
           if (err) throw err;
           res.send("Successfully Authenticated");
-          console.log(req.user);
         });
       }
     })(req, res, next);
@@ -66,7 +65,9 @@ module.exports = function (app) {
     });
   });
   app.get("/user", (req, res) => {
-    res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
+    User.findOne({ username: req.user.username }).then((dbUser) => {
+      res.send(dbUser); // The req.user stores the entire user that has been authenticated inside of it.
+    });
   });
 
   // sends user info on account page
@@ -79,6 +80,13 @@ module.exports = function (app) {
     User.findOne({ _id: req.params.id }, (err) => {
       if (err) throw err;
       res.send(req.user);
+    });
+  });
+
+  // single post route
+  app.get("/post/:id", (req, res) => {
+    Post.findOne({ _id: req.params.id }).then((dbPost) => {
+      res.send(dbPost);
     });
   });
 

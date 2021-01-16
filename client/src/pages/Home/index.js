@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Axios from "axios";
+import React from "react";
 import HomeCard from "../../components/HomeCard";
 import API from "../../utils/API";
 import "./style.css";
@@ -15,7 +14,6 @@ function Home(props) {
     API.register(usernameInput, passwordInput, emailInput, zipInput).then(
       () => {
         API.login(usernameInput, passwordInput).then((res) => {
-          console.log(res);
           props.handleUser();
         });
       }

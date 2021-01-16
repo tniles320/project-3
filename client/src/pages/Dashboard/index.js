@@ -12,6 +12,7 @@ function Dashboard(props) {
     API.getPosts().then((res) => {
       res.data.map((post) => {
         let postObj = {
+          id: post._id,
           user: post.user,
           username: post.username,
           title: post.title,
