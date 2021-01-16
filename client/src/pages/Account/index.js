@@ -3,6 +3,8 @@ import UserContext from "../../utils/UserContext";
 import API from "../../utils/API";
 import PostContainer from "../../components/PostContainer";
 import Navbar from "../../components/Navbar";
+import AccountInfo from "../../components/AccountInfo";
+import "./style.css";
 
 function Account(props) {
   const { username, email, zipCode, rating } = useContext(UserContext);
@@ -33,12 +35,11 @@ function Account(props) {
 
   return (
     <div>
-      {username}
-      {email}
-      {zipCode}
-      {rating}
       <Navbar handleLogout={props.handleLogout} />
-      <PostContainer posts={posts} />
+      <div className="account-info-div">
+        <AccountInfo />
+        <PostContainer posts={posts} />
+      </div>
     </div>
   );
 }
