@@ -1,5 +1,5 @@
 import React from "react";
-import PostContainer from "../../components/PostContainer";
+import CreatePost from "../../components/CreatePost";
 import API from "../../utils/API";
 
 function Post() {
@@ -17,7 +17,7 @@ function Post() {
   };
   return (
     <div>
-      <PostContainer handlePost={handlePost} />
+      <CreatePost handlePost={handlePost} />
     </div>
   );
 }

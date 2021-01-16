@@ -1,27 +1,18 @@
 import React from "react";
+import PostCard from "../PostCard";
+import "./style.css";
 
-// input forms for creating a post
 function PostContainer(props) {
+  const { posts } = props;
   return (
-    <div>
-      <div>
-        <input id="post-title" placeholder="Title"></input>
-        <input id="post-amount" placeholder="Amount $$"></input>
-      </div>
-      <div>
-        <textarea
-          id="post-description"
-          placeholder="Post Description"
-        ></textarea>
-      </div>
-      <div>
-        <input id="post-location" placeholder="city"></input>
-      </div>
-      <div>
-        <button id="submit-post" onClick={props.handlePost}>
-          Submit Post!
-        </button>
-      </div>
+    <div id="dash-post-container">
+      {posts.map((post, index) => {
+        return (
+          <div key={index} className="post-card">
+            <PostCard post={post} />
+          </div>
+        );
+      })}
     </div>
   );
 }
