@@ -3,11 +3,7 @@ body {
 }
 
 .App {
-<<<<<<< HEAD
-    background-color: whitesmoke;
-=======
     background-color: white;
->>>>>>> 22338f39200e8900456d2313146958ea3188473c
     margin: 5%;
     border-radius: 1rem;
 }
@@ -18,16 +14,3 @@ h1 {
     text-align: center;
 }
 
-<<<<<<< HEAD
-.login {
-    text-align: center;
-}
-
-.login input {
-    height: 40px;
-    width: 30%;
-    font-size: 18pt;
-    margin: 10px;
-}
-=======
->>>>>>> 22338f39200e8900456d2313146958ea3188473c
