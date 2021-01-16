@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 import PostContainer from "../../components/PostContainer";
 import API from "../../utils/API";
+import Footer from "../../components/Footer"
 
 function Dashboard(props) {
   const { username, email, zipCode, rating } = useContext(UserContext);
@@ -35,6 +36,7 @@ function Dashboard(props) {
       <Navbar handleLogout={props.handleLogout} />
       <Sidebar />
       <PostContainer posts={posts} />
+      <Footer />
     </div>
   );
 }

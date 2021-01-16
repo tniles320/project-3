@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+
+    grid-column-gap:20px;
+
+
+    /* position: relative;
+    top: 20%;
+    width: 100%; */
+      
+}
+
+.grid-item{
+ float: left;
+ margin-left: 18%;
+}
+
+
+.main-footer{
+    /* min-height: 100vh; */
+    color: white;
+    background: linear-gradient(90deg, rgb(110, 94, 254) 0%, rgba(73,63,252,1) 100%);
+    padding-top: 3em;
+    position: relative;
+   
+    /* width: 100%; */
+    
+
+}
+
