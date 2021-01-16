@@ -1,14 +1,9 @@
 import React from "react";
 import CreatePost from "../../components/CreatePost";
 import API from "../../utils/API";
-<<<<<<< HEAD
-
-function Post() {
-=======
 import Navbar from "../../components/Navbar";
 
 function Post(props) {
->>>>>>> 22338f39200e8900456d2313146958ea3188473c
   // uses input from postContainer component to create post
   const handlePost = () => {
     const title = document.getElementById("post-title").value;
@@ -23,10 +18,7 @@ function Post(props) {
   };
   return (
     <div>
-<<<<<<< HEAD
-=======
       <Navbar handleLogout={props.handleLogout} />
->>>>>>> 22338f39200e8900456d2313146958ea3188473c
       <CreatePost handlePost={handlePost} />
     </div>
   );

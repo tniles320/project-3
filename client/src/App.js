@@ -88,13 +88,6 @@ function App() {
               )}
             </Route>
             <Route exact path="/post">
-<<<<<<< HEAD
-              {user.loggedIn ? <Post /> : <Home handleUser={handleUser} />}
-            </Route>
-            <Route path="/post/:id">
-              {user.loggedIn ? (
-                <SinglePost />
-=======
               {user.loggedIn ? (
                 <Post handleLogout={handleLogout} />
               ) : (
@@ -104,7 +97,6 @@ function App() {
             <Route path="/post/:id">
               {user.loggedIn ? (
                 <SinglePost handleLogout={handleLogout} />
->>>>>>> 22338f39200e8900456d2313146958ea3188473c
               ) : (
                 <Home handleUser={handleUser} />
               )}
