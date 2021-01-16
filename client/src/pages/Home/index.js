@@ -1,79 +1,48 @@
-import React, { useState } from "react";
-import Axios from "axios";
+import React from "react";
+import HomeCard from "../../components/HomeCard";
+import API from "../../utils/API";
+import "./style.css";
 
-function App() {
-  const [registerUsername, setRegisterUsername] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  const [data, setData] = useState(null);
-  const register = () => {
-    Axios({
-      method: "POST",
-      data: {
-        username: registerUsername,
-        password: registerPassword,
-      },
-      withCredentials: true,
-      url: "http://localhost:4000/register",
-    }).then((res) => console.log(res));
+function Home(props) {
+  // register user function
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const usernameInput = document.getElementById("username-input").value;
+    const passwordInput = document.getElementById("password-input").value;
+    const emailInput = document.getElementById("email-input").value;
+    const zipInput = document.getElementById("zip-input").value;
+    API.register(usernameInput, passwordInput, emailInput, zipInput).then(
+      () => {
+        API.login(usernameInput, passwordInput).then((res) => {
+          props.handleUser();
+        });
+      }
+    );
   };
-  const login = () => {
-    Axios({
-      method: "POST",
-      data: {
-        username: loginUsername,
-        password: loginPassword,
-      },
-      withCredentials: true,
-      url: "http://localhost:4000/login",
-    }).then((res) => console.log(res));
-  };
-  const getUser = () => {
-    Axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://localhost:4000/user",
-    }).then((res) => {
-      setData(res.data);
-      console.log(res.data);
+
+  // user login function
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const usernameLogin = document.getElementById("username-login").value;
+    const passwordLogin = document.getElementById("password-login").value;
+    API.login(usernameLogin, passwordLogin).then((res) => {
+      props.handleUser();
     });
+  };
+
+  // shows input forms for user to create account
+  const createAccount = () => {
+    document.getElementById("register-info").style.visibility = "visible";
   };
   return (
     <div className="App">
-      <div>
-        <h1>Register</h1>
-        <input
-          placeholder="username"
-          onChange={(e) => setRegisterUsername(e.target.value)}
-        />
-        <input
-          placeholder="password"
-          onChange={(e) => setRegisterPassword(e.target.value)}
-        />
-        <button onClick={register}>Submit</button>
-      </div>
-
-      <div>
-        <h1>Login</h1>
-        <input
-          placeholder="username"
-          onChange={(e) => setLoginUsername(e.target.value)}
-        />
-        <input
-          placeholder="password"
-          onChange={(e) => setLoginPassword(e.target.value)}
-        />
-        <button onClick={login}>Submit</button>
-      </div>
-
-      <div>
-        <h1>Get User</h1>
-        <button onClick={getUser}>Submit</button>
-        {data ? <h1>Welcome Back {data.username}</h1> : null}
-      </div>
+      <HomeCard
+        handleLogin={handleLogin}
+        handleRegister={handleRegister}
+        createAccount={createAccount}
+      />
     </div>
   );
 }
 
-export default App;
+export default Home;
