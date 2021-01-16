@@ -11,6 +11,23 @@ export default {
     });
   },
 
+  getPosts: function () {
+    return Axios({
+      method: "GET",
+      url: "http://localhost:3001/dashboard",
+    });
+  },
+
+  getSinglePost: function (id) {
+    return Axios({
+      method: "GET",
+      params: {
+        id: id,
+      },
+      url: `http://localhost:3001/post/${id}`,
+    });
+  },
+
   // register user call
   register: function (username, password, email, zipCode) {
     return Axios({

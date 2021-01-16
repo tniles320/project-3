@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { MenuItems } from "./MenuItems";
 import { Button } from "../NavbarBtn";
 import "./Navbar.css";
@@ -27,9 +28,9 @@ function Navbar(props) {
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>
-              <a className={item.cName} href={item.url}>
+              <Link to={item.url} className={item.cName}>
                 {item.title}
-              </a>
+              </Link>
             </li>
           );
         })}

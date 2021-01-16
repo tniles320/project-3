@@ -3,18 +3,15 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Account from "./pages/Account";
 import Post from "./pages/Post";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import SinglePost from "./pages/SinglePost";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
 import UserContext from "./utils/UserContext";
 import API from "./utils/API";
 
 function App() {
   const [user, setUser] = useState({
+    id: "",
     username: "",
     email: "",
     zipCode: "",
@@ -24,10 +21,11 @@ function App() {
   });
 
   // sets user state when the page is loaded
-  const handleUser = () => {
-    API.getUser().then((res) => {
+  const handleUser = async () => {
+    await API.getUser().then((res) => {
       if (res.data) {
-        setUser({
+        return setUser({
+          id: res.data._id,
           username: res.data.username,
           email: res.data.email,
           zipCode: res.data.zipCode,
@@ -49,7 +47,6 @@ function App() {
 
     API.logout().then((res) => {
       console.log("successfully logged out!");
-      console.log(res.status);
       if (res.status === 200) {
         setUser({
           username: "",
@@ -76,22 +73,29 @@ function App() {
                 <Home handleUser={handleUser} />
               )}
             </Route>
-            <Route exact path="/account">
+            <Route path="/account">
               {user.loggedIn ? (
                 <Account handleLogout={handleLogout} />
               ) : (
-                <Home />
+                <Home handleUser={handleUser} />
               )}
             </Route>
             <Route exact path="/dashboard">
               {user.loggedIn ? (
                 <Dashboard handleLogout={handleLogout} />
               ) : (
-                <Home />
+                <Home handleUser={handleUser} />
               )}
             </Route>
             <Route exact path="/post">
-              {user.loggedIn ? <Post /> : <Home />}
+              {user.loggedIn ? <Post /> : <Home handleUser={handleUser} />}
+            </Route>
+            <Route path="/post/:id">
+              {user.loggedIn ? (
+                <SinglePost />
+              ) : (
+                <Home handleUser={handleUser} />
+              )}
             </Route>
             <Route>
               <NoMatch />
