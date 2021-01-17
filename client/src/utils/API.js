@@ -28,6 +28,32 @@ export default {
     });
   },
 
+  updatePost: function (id, title, description, location, amount) {
+    return Axios({
+      method: "PUT",
+      params: {
+        id: id,
+      },
+      data: {
+        title: title,
+        description: description,
+        location: location,
+        amount: amount,
+      },
+      url: `http://localhost:3001/post/${id}`,
+    });
+  },
+
+  deletePost: function (id) {
+    return Axios({
+      method: "DELETE",
+      params: {
+        id: id,
+      },
+      url: `http://localhost:3001/post/${id}`,
+    });
+  },
+
   // register user call
   register: function (username, password, email, zipCode) {
     return Axios({

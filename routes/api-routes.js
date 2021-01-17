@@ -65,17 +65,16 @@ module.exports = function (app) {
     });
   });
   app.get("/user", (req, res) => {
-    if(req.user) {
+    if (req.user) {
       User.findOne({ username: req.user.username }).then((dbUser) => {
         res.send(dbUser); // The req.user stores the entire user that has been authenticated inside of it.
       });
     } else {
       res.json({
-        error : true, 
-        error_message : "cannot fetch user if not logged in "
-      })
+        error: true,
+        error_message: "cannot fetch user if not logged in ",
+      });
     }
-
   });
 
   // sends user info on account page
@@ -95,6 +94,28 @@ module.exports = function (app) {
   app.get("/post/:id", (req, res) => {
     Post.findOne({ _id: req.params.id }).then((dbPost) => {
       res.send(dbPost);
+    });
+  });
+
+  app.put("/post/:id", (req, res) => {
+    Post.updateOne(
+      { _id: req.params.id },
+      {
+        $set: {
+          title: req.body.title,
+          desciption: req.body.description,
+          location: req.body.location,
+          amount: req.body.amount,
+        },
+      }
+    ).then((dbPost) => {
+      res.send(dbPost);
+    });
+  });
+
+  app.delete("/post/:id", (req, res) => {
+    Post.deleteOne({ _id: req.params.id }).then((dbPost) => {
+      res.send("Post deleted");
     });
   });
 

@@ -23,7 +23,7 @@ function App() {
   // sets user state when the page is loaded
   const handleUser = async () => {
     await API.getUser().then((res) => {
-      if (res.data) {
+      if (res.data._id) {
         return setUser({
           id: res.data._id,
           username: res.data.username,
