@@ -42,11 +42,35 @@ function SinglePost(props) {
     handleSinglePost();
   }, []);
 
+  const handleEditPost = () => {
+    const title = document.getElementById("edit-title").value;
+    const amount = document.getElementById("edit-amount").value;
+    const description = document.getElementById("edit-description").value;
+    const location = document.getElementById("edit-location").value;
+    API.updatePost(singlePost.id, title, description, location, amount).then(
+      (res) => {
+        alert("Post Updated!");
+        console.log(res.config.data);
+      }
+    );
+  };
+
+  const handleDeletePost = () => {
+    API.deletePost(singlePost.id).then((res) => {
+      alert("Post Deleted!");
+      console.log(res);
+    });
+  };
+
   if (singlePost.currentUser) {
     return (
       <div>
         <Navbar handleLogout={props.handleLogout} />
-        <CurrentUserPost singlePost={singlePost} />
+        <CurrentUserPost
+          singlePost={singlePost}
+          handleEditPost={handleEditPost}
+          handleDeletePost={handleDeletePost}
+        />
       </div>
     );
   } else {
