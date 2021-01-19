@@ -19,7 +19,7 @@ function Navbar(props) {
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo">
-        ManyGigs<i className="fab fa-react"></i>
+        ManyGigs <i className="fas fa-comment-dollar"></i>
       </h1>
       <div className="menu-icon" onClick={() => handleClick}>
         <i className={navBtn.clicked ? "fas fa-times" : "fas fa-bars"}></i>

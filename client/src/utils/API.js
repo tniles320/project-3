@@ -39,6 +39,7 @@ export default {
         description: description,
         location: location,
         amount: amount,
+        
       },
       url: `http://localhost:3001/post/${id}`,
     });
@@ -91,7 +92,7 @@ export default {
   },
 
   //posts user post with data
-  submitPost: function (title, amount, description, location) {
+  submitPost: function (title, amount, description, location, worktype) {
     return Axios({
       method: "POST",
       withCredentials: true,
@@ -100,6 +101,7 @@ export default {
         description: description,
         amount: amount,
         location: location,
+        worktype: worktype,
       },
       url: "http://localhost:3001/post",
     });

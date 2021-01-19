@@ -10,8 +10,12 @@ function Post(props) {
     const amount = document.getElementById("post-amount").value;
     const description = document.getElementById("post-description").value;
     const location = document.getElementById("post-location").value;
+    const wtype = document.getElementById("work-type");
+    const worktype = wtype.options[wtype.selectedIndex].text;
+   
+    
     // axios call
-    API.submitPost(title, amount, description, location).then((res) => {
+    API.submitPost(title, amount, description, location, worktype).then((res) => {
       window.location.replace("/dashboard");
       alert("Post Created!");
     });

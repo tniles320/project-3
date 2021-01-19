@@ -14,6 +14,13 @@ function CreatePost(props) {
           placeholder="Post Description"
         ></textarea>
       </div>
+      <label>Work Type</label>
+            <select id="work-type">
+              <option value="select">Select</option>
+              <option value="Delivery & Moving">Delivery & Moving</option>
+              <option value="Handyman">Handyman</option>
+              <option value="IT & Admin">IT & Admin</option>
+            </select>
       <div>
         <input id="post-location" placeholder="city"></input>
       </div>
