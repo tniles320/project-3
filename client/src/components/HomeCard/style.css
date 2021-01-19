@@ -42,10 +42,10 @@
     color:black;  
 }
 #create-account:hover{
-    transition: all ease .5s .25s;
+    border-radius: 2rem;
     background-color:rgb(110, 94, 254);  
     color:white;
-    transition: 250ms;
+   
 }
 
 p {
@@ -93,10 +93,10 @@ p {
 
 #regBtn:hover{
     
-    transition: all ease .5s .25s;
+    border-radius: 2rem;
     background-color:rgb(110, 94, 254);  
     color:white;
-    transition: 250ms;
+    
 }
 
 .login {
@@ -136,10 +136,12 @@ p {
 }
 #loginBtn:hover{
     
-    transition: all ease .5s .25s;
+
     background-color:rgb(110, 94, 254);  
     color:white;
-    transition: 250ms;
+  
+    border-radius: 2rem;
+
 }
 .logo{
     font-size:x-large;

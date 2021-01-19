@@ -1,0 +1,26 @@
+#work-type {
+  height: 35px;
+  margin: 1%;
+  font-size: large;
+}
+
+#experience {
+  margin: 1%;
+  font-size: large;
+  height: 35px;
+}
+
+#price-range {
+  margin: 1%;
+  font-size: large;
+  height: 35px;
+}
+
+#find-work {
+  font-size: x-large;
+  background-color: white;
+}
+#find-worker {
+  font-size: x-large;
+  background-color: white;
+}

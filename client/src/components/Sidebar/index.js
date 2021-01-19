@@ -1,21 +1,22 @@
 import React from "react";
+import "./style.css";
 
 function Sidebar() {
   return (
     <div>
       {/* Find Work dropdowns */}
-      <form>
+      <form id ="find-work">
         <fieldset>
           <legend>Find Work</legend>
           <p>
-            <label>Work Type</label>
+            <label>Work Type </label>
             <select id="work-type">
               <option value="select">Select</option>
-              <option value="heating & cooling">Heating & Cooling</option>
-              <option value="flooring">Flooring</option>
-              <option value="carpentry">Carpentry</option>
+              <option value="Delivery & Moving">Delivery & Moving</option>
+              <option value="Handyman">Handyman</option>
+              <option value="IT & Admin">IT & Admin</option>
             </select>
-            <label>Experience</label>
+            <label> Experience </label>
             <select id="experience">
               <option value="select">Select</option>
               <option value="0">0-1 Years</option>
@@ -26,19 +27,19 @@ function Sidebar() {
         </fieldset>
       </form>
       {/* Find a Worker dropdown */}
-      <form>
+      <form id ="find-worker">
         <fieldset>
           <legend>Find a Worker</legend>
           <p>
-            <label>Work Type</label>
+            <label>Work Type </label>
             <select id="work-type">
               <option value="select">Select</option>
-              <option value="heating & cooling">Heating & Cooling</option>
-              <option value="flooring">Flooring</option>
-              <option value="carpentry">Carpentry</option>
+              <option value="Delivery & Moving">Delivery & Moving</option>
+              <option value="Handyman">Handyman</option>
+              <option value="IT & Admin">IT & Admin</option>
             </select>
-            <label>Price Range</label>
-            <select id="price range">
+            <label> Price Range </label>
+            <select id="price-range">
               <option value="select">Select</option>
               <option value="0">$</option>
               <option value="1">$$</option>

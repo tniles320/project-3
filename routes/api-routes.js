@@ -45,6 +45,7 @@ module.exports = function (app) {
         description: req.body.description,
         amount: req.body.amount,
         location: req.body.location,
+        worktype: req.body.worktype,
       });
       newPost.save();
       res.send("Post Created");
@@ -106,6 +107,7 @@ module.exports = function (app) {
           desciption: req.body.description,
           location: req.body.location,
           amount: req.body.amount,
+          worktype: req.body.worktype
         },
       }
     ).then((dbPost) => {
