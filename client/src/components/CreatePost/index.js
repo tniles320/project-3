@@ -32,6 +32,10 @@ function CreatePost(props) {
             <input id="post-location" placeholder="City"></input>
           </div>
         </div>
+        <div> 
+          <label htmlFor="image-div">Upload Image</label>
+          <input id="image-div" placeholder="Image"></input>
+        </div>
         <div>
           <label htmlFor="amount-div">Amount</label>
           <div id="amount-div">
