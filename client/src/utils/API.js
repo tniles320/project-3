@@ -28,7 +28,7 @@ export default {
     });
   },
 
-  updatePost: function (id, title, description, location, amount) {
+  updatePost: function (id, title, description, location, amount, worktype) {
     return Axios({
       method: "PUT",
       params: {
@@ -39,7 +39,7 @@ export default {
         description: description,
         location: location,
         amount: amount,
-        
+        worktype: worktype,
       },
       url: `http://localhost:3001/post/${id}`,
     });

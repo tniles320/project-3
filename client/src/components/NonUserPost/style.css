@@ -9,6 +9,18 @@
     margin-bottom: 50px;
 }
 
+#post-worktype {
+    margin: auto;
+    max-width: 280px;
+}
+
+#worktype-text {
+    text-align: center;
+    background: white;
+    border-radius: 50px;
+    height: 30px;
+}
+
 #post-description {
     display: flex;
     justify-content: flex-start;

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function PostCard(props) {
   const { post } = props;
-  const { username, title, worktype, location, amount, id } = post;
+  const { username, title, worktype, location, amount, _id } = post;
   return (
     <div>
-      <Link to={`post/${id}`}>
+      <Link to={`post/${_id}`}>
         <h3>{title}</h3>
         <p>{username}</p>
         <p>{worktype}</p>

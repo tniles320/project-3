@@ -2,25 +2,30 @@ import React from "react";
 import "./style.css";
 
 function NonUserPost(props) {
-  console.log(props);
   const { singlePost } = props;
-  const { amount, description, location, title } = singlePost;
+  const { amount, description, location, title, worktype } = singlePost;
   return (
     <div>
       <h1 id="post-ttl">{title}</h1>
-      <label for="post-description">Description</label>
-      <div id="post-description">
-        <p>{description}</p>
+      <div id="post-worktype">
+        <label htmlFor="worktype-text">Work Type</label>
+        <p id="worktype-text">{worktype}</p>
+      </div>
+      <div id="description-container">
+        <label htmlFor="post-description">Description</label>
+        <div id="post-description">
+          <p>{description}</p>
+        </div>
       </div>
       <div id="post-loc-amount">
         <div>
-          <label for="post-loc">Location</label>
+          <label htmlFor="post-loc">Location</label>
           <div id="post-loc">
             <p>{location}</p>
           </div>
         </div>
         <div>
-          <label for="post-amnt">Amount</label>
+          <label htmlFor="post-amnt">Amount</label>
           <div id="post-amnt">
             <p>{amount}</p>
           </div>

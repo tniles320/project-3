@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
 
 function Post(props) {
+  const { handleLogout } = props;
   // uses input from postContainer component to create post
   const handlePost = () => {
     const title = document.getElementById("post-title").value;
@@ -12,17 +13,16 @@ function Post(props) {
     const location = document.getElementById("post-location").value;
     const wtype = document.getElementById("work-type");
     const worktype = wtype.options[wtype.selectedIndex].text;
-   
-    
+
     // axios call
-    API.submitPost(title, amount, description, location, worktype).then((res) => {
+    API.submitPost(title, amount, description, location, worktype).then(() => {
       window.location.replace("/dashboard");
       alert("Post Created!");
     });
   };
   return (
     <div>
-      <Navbar handleLogout={props.handleLogout} />
+      <Navbar handleLogout={handleLogout} />
       <CreatePost handlePost={handlePost} />
     </div>
   );

@@ -2,27 +2,38 @@ import React from "react";
 import "./style.css";
 
 function CurrentUserPost(props) {
-  console.log(props);
   const { handleEditPost, handleDeletePost, singlePost } = props;
-  const { amount, description, location, title } = singlePost;
+  const { amount, description, location, title, worktype } = singlePost;
   return (
     <div>
+      <h2 id="edit-note">Click into any form to edit</h2>
       <div id="user-ttl">
         <input id="edit-title" defaultValue={title}></input>
       </div>
-      <label for="user-description">Description</label>
-      <div id="user-description">
-        <input id="edit-description" defaultValue={description}></input>
+      <div id="user-worktype">
+        <label htmlFor="edit-worktype">Work Type</label>
+        <select id="edit-worktype">
+          <option value={worktype}>{worktype}</option>
+          <option value="Delivery & Moving">Delivery & Moving</option>
+          <option value="Handyman">Handyman</option>
+          <option value="IT & Admin">IT & Admin</option>
+        </select>
+      </div>
+      <div id="description-container">
+        <label htmlFor="user-description">Description</label>
+        <div id="user-description">
+          <input id="edit-description" defaultValue={description}></input>
+        </div>
       </div>
       <div id="user-loc-amount">
         <div>
-          <label for="user-loc">Location</label>
+          <label htmlFor="user-loc">Location</label>
           <div id="user-loc">
             <input id="edit-location" defaultValue={location}></input>
           </div>
         </div>
         <div>
-          <label for="user-amnt">Amount</label>
+          <label htmlFor="user-amnt">Amount</label>
           <div id="user-amnt">
             <input id="edit-amount" defaultValue={amount}></input>
           </div>
