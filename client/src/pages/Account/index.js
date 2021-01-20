@@ -7,7 +7,7 @@ import AccountInfo from "../../components/AccountInfo";
 import "./style.css";
 
 function Account(props) {
-  const { username, email, zipCode, rating } = useContext(UserContext);
+  const { handleLogout } = props;
 
   const [posts, setPosts] = useState([]);
 
@@ -15,16 +15,7 @@ function Account(props) {
   const handleUserPosts = () => {
     API.findUserPosts().then((res) => {
       res.data.map((post) => {
-        let postObj = {
-          id: post._id,
-          user: post.user,
-          username: post.username,
-          title: post.title,
-          description: post.description,
-          amount: post.amount,
-          location: post.location,
-        };
-        setPosts((posts) => [...posts, postObj]);
+        setPosts((posts) => [...posts, post]);
       });
     });
   };
@@ -35,7 +26,7 @@ function Account(props) {
 
   return (
     <div>
-      <Navbar handleLogout={props.handleLogout} />
+      <Navbar handleLogout={handleLogout} />
       <div className="account-info-div">
         <AccountInfo />
         <PostContainer posts={posts} />

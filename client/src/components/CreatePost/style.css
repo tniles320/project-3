@@ -1,8 +1,8 @@
-#edit-note {
+#create-note {
     text-align: center;
 }
 
-#user-ttl {
+#title-div {
     margin: auto;
     background: white;
     border-radius: 50px;
@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-#user-description {
+#description-div {
     display: flex;
     justify-content: flex-start;
     margin: auto;
@@ -26,51 +26,7 @@
     padding: 10px 20px 10px 20px;
 }
 
-#description-container label {
-    margin-left: 140px;
-}
-
-#user-loc-amount {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: auto;
-    max-width: 800px;
-}
-
-#user-loc,
-#user-amnt {
-    display: flex;
-    justify-content: center;
-    background: white;
-    border-radius: 50px;
-    width: 200px;
-    height: 35px;
-}
-
-#edit-title {
-    border: none;
-    text-align: center;
-    font: 1.5rem bold;
-    border-radius: 50px;
-    padding-top: 5px;
-}
-
-#user-worktype {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    margin: auto;
-}
-
-#edit-worktype {
-    border-radius: 50px;
-    height: 35px;
-    font-size: 1.2rem;
-    padding: 5px;
-}
-
-#edit-description {
+#post-description {
     border: none;
     text-align: center;
     width: 90%;
@@ -80,40 +36,86 @@
     margin: 10px auto 10px auto;
 }
 
-#edit-location {
+#description-container label {
+    margin-left: 140px;
+}
+
+#post-loc-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 800px;
+}
+
+#location-div,
+#amount-div {
+    display: flex;
+    justify-content: center;
+    background: white;
+    border-radius: 50px;
+    width: 200px;
+    height: 35px;
+}
+
+#post-title {
+    border: none;
+    text-align: center;
+    font: 1.5rem bold;
+    border-radius: 50px;
+    padding-top: 5px;
+}
+
+#post-worktype {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: auto;
+}
+
+#worktype {
+    border-radius: 50px;
+    height: 35px;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+#post-location {
     border: none;
 }
 
-#edit-amount {
+#post-amount {
     border: none;
 }
 
-#edit-btns {
+#submit-div {
     display: flex;
     justify-content: space-evenly;
     max-width: 400px;
     margin: 40px auto 0 auto;
 }
 
-#edit-btns button {
+#submit-post {
     font-family: 'Merienda';
     border-radius: 2rem;
     font-size: 1.2rem;
     font-weight: bold;
     height: 35px;
-    width: 120px;
+    width: 180px;
     background-color: rgb(33, 138, 12);
 }
 
-#edit-btns button:nth-child(2) {
-    background-color: rgb(216, 22, 60);
-}
-
-#edit-btns button:hover {
+#submit-post:hover {
     cursor: pointer;
     transform: scale(1.2);
 }
 
-#edit-btns button:focus {
+#submit-post,
+#post-title,
+#worktype,
+#post-description,
+#post-amount,
+#post-location,
+:focus {
     outline: none;
 }

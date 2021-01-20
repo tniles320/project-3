@@ -6,34 +6,17 @@ import UserContext from "../../utils/UserContext";
 import Navbar from "../../components/Navbar";
 
 function SinglePost(props) {
-  const { id } = useContext(UserContext);
+  const { handleLogout } = props;
+  const { _id } = useContext(UserContext);
   const [singlePost, setSinglePost] = useState({});
 
-  // state shows as empty on page load
+  // sets state with post data and is editable if post is owned by logged in user
   const handleSinglePost = () => {
     API.getSinglePost(window.location.pathname.substr(6)).then((res) => {
-      if (id === res.data.user) {
-        return setSinglePost({
-          id: res.data._id,
-          user: res.data.user,
-          username: res.data.username,
-          title: res.data.title,
-          description: res.data.description,
-          amount: res.data.amount,
-          location: res.data.location,
-          currentUser: true,
-        });
+      if (_id === res.data.user) {
+        return setSinglePost({ ...res.data, currentUser: true });
       } else {
-        return setSinglePost({
-          id: res.data._id,
-          user: res.data.user,
-          username: res.data.username,
-          title: res.data.title,
-          description: res.data.description,
-          amount: res.data.amount,
-          location: res.data.location,
-          currentUser: false,
-        });
+        return setSinglePost({ ...res.data, currentUser: false });
       }
     });
   };
@@ -47,16 +30,22 @@ function SinglePost(props) {
     const amount = document.getElementById("edit-amount").value;
     const description = document.getElementById("edit-description").value;
     const location = document.getElementById("edit-location").value;
-    API.updatePost(singlePost.id, title, description, location, amount).then(
-      (res) => {
-        alert("Post Updated!");
-        console.log(res.config.data);
-      }
-    );
+    const worktype = document.getElementById("edit-worktype").value;
+    API.updatePost(
+      singlePost._id,
+      title,
+      description,
+      location,
+      amount,
+      worktype
+    ).then((res) => {
+      alert("Post Updated!");
+      console.log(res.config.data);
+    });
   };
 
   const handleDeletePost = () => {
-    API.deletePost(singlePost.id).then((res) => {
+    API.deletePost(singlePost._id).then((res) => {
       alert("Post Deleted!");
       console.log(res);
     });
@@ -65,7 +54,7 @@ function SinglePost(props) {
   if (singlePost.currentUser) {
     return (
       <div>
-        <Navbar handleLogout={props.handleLogout} />
+        <Navbar handleLogout={handleLogout} />
         <CurrentUserPost
           singlePost={singlePost}
           handleEditPost={handleEditPost}
@@ -76,7 +65,7 @@ function SinglePost(props) {
   } else {
     return (
       <div>
-        <Navbar handleLogout={props.handleLogout} />
+        <Navbar handleLogout={handleLogout} />
         <NonUserPost singlePost={singlePost} />
       </div>
     );

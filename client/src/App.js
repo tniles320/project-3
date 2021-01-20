@@ -10,29 +10,13 @@ import UserContext from "./utils/UserContext";
 import API from "./utils/API";
 
 function App() {
-  const [user, setUser] = useState({
-    id: "",
-    username: "",
-    email: "",
-    zipCode: "",
-    rating: "",
-    posts: [],
-    loggedIn: false,
-  });
+  const [user, setUser] = useState({ loggedIn: false });
 
   // sets user state when the page is loaded
   const handleUser = async () => {
     await API.getUser().then((res) => {
       if (res.data._id) {
-        return setUser({
-          id: res.data._id,
-          username: res.data.username,
-          email: res.data.email,
-          zipCode: res.data.zipCode,
-          rating: res.data.rating,
-          posts: res.data.posts,
-          loggedIn: true,
-        });
+        return setUser({ ...res.data, loggedIn: true });
       }
     });
   };
@@ -42,20 +26,11 @@ function App() {
   }, []);
 
   // logout function with axios call utilizing API
-  const handleLogout = (event) => {
-    event.preventDefault();
-
-    API.logout().then((res) => {
+  const handleLogout = async () => {
+    await API.logout().then((res) => {
       console.log("successfully logged out!");
       if (res.status === 200) {
-        setUser({
-          username: "",
-          email: "",
-          zipCode: "",
-          rating: "",
-          posts: [],
-          loggedIn: false,
-        });
+        setUser({ loggedIn: false });
       }
     });
   };
@@ -92,7 +67,7 @@ function App() {
             </Route>
             <Route path="/post/:id">
               {user.loggedIn ? (
-                <SinglePost />
+                <SinglePost handleLogout={handleLogout} />
               ) : (
                 <Home handleUser={handleUser} />
               )}
