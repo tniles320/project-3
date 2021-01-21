@@ -24,11 +24,12 @@ function Dashboard(props) {
   }, []);
 
   return (
-    <div className="dash-container">
+    <div>
       <Navbar handleLogout={handleLogout} />
-      <Sidebar />
-      <h2>Recent Posts</h2>
-      <PostContainer posts={posts} />
+      <div className="dash-container">
+        <Sidebar />
+        <PostContainer posts={posts} />
+      </div>
       <Footer />
     </div>
   );

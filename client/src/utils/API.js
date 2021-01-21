@@ -7,14 +7,14 @@ export default {
     return Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:3001/user",
+      url: "/user",
     });
   },
 
   getPosts: function () {
     return Axios({
       method: "GET",
-      url: "http://localhost:3001/dashboard",
+      url: "/dashboard",
     });
   },
 
@@ -24,7 +24,7 @@ export default {
       params: {
         id: id,
       },
-      url: `http://localhost:3001/post/${id}`,
+      url: `/post/${id}`,
     });
   },
 
@@ -41,7 +41,7 @@ export default {
         amount: amount,
         worktype: worktype,
       },
-      url: `http://localhost:3001/post/${id}`,
+      url: `/post/${id}`,
     });
   },
 
@@ -51,7 +51,7 @@ export default {
       params: {
         id: id,
       },
-      url: `http://localhost:3001/post/${id}`,
+      url: `/post/${id}`,
     });
   },
 
@@ -66,7 +66,7 @@ export default {
         zipCode: zipCode,
       },
       withCredentials: true,
-      url: "http://localhost:3001/register",
+      url: "/register",
     });
   },
 
@@ -79,7 +79,7 @@ export default {
         password: password,
       },
       withCredentials: true,
-      url: "http://localhost:3001/login",
+      url: "/login",
     });
   },
 
@@ -87,7 +87,7 @@ export default {
   logout: function () {
     return Axios({
       method: "GET",
-      url: "http://localhost:3001/logout",
+      url: "/logout",
     });
   },
 
@@ -103,7 +103,7 @@ export default {
         location: location,
         worktype: worktype,
       },
-      url: "http://localhost:3001/post",
+      url: "/post",
     });
   },
 
@@ -112,7 +112,7 @@ export default {
     return Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:3001/post",
+      url: "/post",
     });
   },
 };
