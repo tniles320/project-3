@@ -11,6 +11,50 @@ export default {
     });
   },
 
+  getPosts: function () {
+    return Axios({
+      method: "GET",
+      url: "http://localhost:3001/dashboard",
+    });
+  },
+
+  getSinglePost: function (id) {
+    return Axios({
+      method: "GET",
+      params: {
+        id: id,
+      },
+      url: `http://localhost:3001/post/${id}`,
+    });
+  },
+
+  updatePost: function (id, title, description, location, amount, worktype) {
+    return Axios({
+      method: "PUT",
+      params: {
+        id: id,
+      },
+      data: {
+        title: title,
+        description: description,
+        location: location,
+        amount: amount,
+        worktype: worktype,
+      },
+      url: `http://localhost:3001/post/${id}`,
+    });
+  },
+
+  deletePost: function (id) {
+    return Axios({
+      method: "DELETE",
+      params: {
+        id: id,
+      },
+      url: `http://localhost:3001/post/${id}`,
+    });
+  },
+
   // register user call
   register: function (username, password, email, zipCode) {
     return Axios({
@@ -48,7 +92,7 @@ export default {
   },
 
   //posts user post with data
-  submitPost: function (title, amount, description, location) {
+  submitPost: function (title, amount, description, location, worktype) {
     return Axios({
       method: "POST",
       withCredentials: true,
@@ -57,6 +101,7 @@ export default {
         description: description,
         amount: amount,
         location: location,
+        worktype: worktype,
       },
       url: "http://localhost:3001/post",
     });

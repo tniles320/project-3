@@ -12,7 +12,6 @@ module.exports = function (app) {
         req.logIn(user, (err) => {
           if (err) throw err;
           res.send("Successfully Authenticated");
-          console.log(req.user);
         });
       }
     })(req, res, next);
@@ -46,6 +45,7 @@ module.exports = function (app) {
         description: req.body.description,
         amount: req.body.amount,
         location: req.body.location,
+        worktype: req.body.worktype,
       });
       newPost.save();
       res.send("Post Created");
@@ -59,8 +59,23 @@ module.exports = function (app) {
       });
     });
   });
+  // gets all posts to display on dashboard
+  app.get("/dashboard", (req, res) => {
+    Post.find({}).then((dbPost) => {
+      res.send(dbPost);
+    });
+  });
   app.get("/user", (req, res) => {
-    res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
+    if (req.user) {
+      User.findOne({ username: req.user.username }).then((dbUser) => {
+        res.send(dbUser); // The req.user stores the entire user that has been authenticated inside of it.
+      });
+    } else {
+      res.json({
+        error: true,
+        error_message: "cannot fetch user if not logged in ",
+      });
+    }
   });
 
   // sends user info on account page
@@ -73,6 +88,36 @@ module.exports = function (app) {
     User.findOne({ _id: req.params.id }, (err) => {
       if (err) throw err;
       res.send(req.user);
+    });
+  });
+
+  // single post route
+  app.get("/post/:id", (req, res) => {
+    Post.findOne({ _id: req.params.id }).then((dbPost) => {
+      res.send(dbPost);
+    });
+  });
+
+  app.put("/post/:id", (req, res) => {
+    Post.updateOne(
+      { _id: req.params.id },
+      {
+        $set: {
+          title: req.body.title,
+          desciption: req.body.description,
+          location: req.body.location,
+          amount: req.body.amount,
+          worktype: req.body.worktype
+        },
+      }
+    ).then((dbPost) => {
+      res.send(dbPost);
+    });
+  });
+
+  app.delete("/post/:id", (req, res) => {
+    Post.deleteOne({ _id: req.params.id }).then((dbPost) => {
+      res.send("Post deleted");
     });
   });
 

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Axios from "axios";
+import React from "react";
 import HomeCard from "../../components/HomeCard";
 import API from "../../utils/API";
 import "./style.css";
@@ -14,8 +13,7 @@ function Home(props) {
     const zipInput = document.getElementById("zip-input").value;
     API.register(usernameInput, passwordInput, emailInput, zipInput).then(
       () => {
-        API.login(usernameInput, passwordInput).then((res) => {
-          console.log(res);
+        API.login(usernameInput, passwordInput).then(() => {
           props.handleUser();
         });
       }
@@ -27,7 +25,7 @@ function Home(props) {
     event.preventDefault();
     const usernameLogin = document.getElementById("username-login").value;
     const passwordLogin = document.getElementById("password-login").value;
-    API.login(usernameLogin, passwordLogin).then((res) => {
+    API.login(usernameLogin, passwordLogin).then(() => {
       props.handleUser();
     });
   };
@@ -35,7 +33,9 @@ function Home(props) {
   // shows input forms for user to create account
   const createAccount = () => {
     document.getElementById("register-info").style.visibility = "visible";
+    document.getElementById("create-account").style.visibility = "hidden";
   };
+
   return (
     <div className="App">
       <HomeCard

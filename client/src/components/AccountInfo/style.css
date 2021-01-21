@@ -1,0 +1,10 @@
+.account-info-container{
+    display: flex;
+    justify-content: center;
+
+   background-color: white; 
+  font-size: x-large;
+  border-style: solid;
+  border-color: blue;
+  
+}

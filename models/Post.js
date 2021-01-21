@@ -33,6 +33,11 @@ const PostSchema = new Schema({
     trim: true,
     required: "location is required",
   },
+  worktype: {
+    type: String,
+    trim: true,
+    required: "worktype is required",
+  },
   messages: [
     {
       type: Schema.Types.ObjectId,

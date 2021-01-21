@@ -1,0 +1,125 @@
+#edit-note {
+    text-align: center;
+}
+
+#user-ttl {
+    margin: auto;
+    background: white;
+    border-radius: 50px;
+    max-width: 400px;
+    height: 40px;
+    text-decoration: none;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#user-description {
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
+    background: white;
+    border-radius: 50px;
+    max-width: 800px;
+    min-height: 200px;
+    margin-bottom: 20px;
+    padding: 10px 20px 10px 20px;
+}
+
+#description-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+#description-container label {
+    margin-left: 50px;
+}
+
+#user-loc-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 800px;
+}
+
+#user-loc,
+#user-amnt {
+    display: flex;
+    justify-content: center;
+    background: white;
+    border-radius: 50px;
+    width: 200px;
+    height: 35px;
+}
+
+#edit-title {
+    border: none;
+    text-align: center;
+    font: 1.5rem bold;
+    border-radius: 50px;
+    padding-top: 5px;
+}
+
+#user-worktype {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: auto;
+}
+
+#edit-worktype {
+    border-radius: 50px;
+    height: 35px;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+#edit-description {
+    border: none;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    border-radius: 50px;
+    font: 1.2rem arial;
+    margin: 10px auto 10px auto;
+    resize: none;
+}
+
+#edit-location {
+    border: none;
+}
+
+#edit-amount {
+    border: none;
+}
+
+#edit-btns {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 400px;
+    margin: 40px auto 0 auto;
+}
+
+#edit-btns button {
+    font-family: 'Merienda';
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 35px;
+    width: 120px;
+    background-color: rgb(33, 138, 12);
+}
+
+#edit-btns button:nth-child(2) {
+    background-color: rgb(216, 22, 60);
+}
+
+#edit-btns button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+#edit-btns button:focus {
+    outline: none;
+}
