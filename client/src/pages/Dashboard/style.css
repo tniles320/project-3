@@ -1,7 +1,11 @@
-.dash-container{
+.dash-container {
     background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
 }
-h2{
+
+h2 {
    
     font-family: 'Poppins', sans-serif;
     text-align: center;

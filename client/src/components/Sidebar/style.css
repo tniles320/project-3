@@ -19,7 +19,14 @@
 #find-work {
   font-size: x-large;
   background-color: white;
+  margin-top: 55px;
 }
+
+#find-work fieldset,
+#find-worker fieldset {
+  min-height: 200px;
+}
+
 #find-worker {
   font-size: x-large;
   background-color: white;
