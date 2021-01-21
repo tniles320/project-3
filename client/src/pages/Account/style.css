@@ -1,7 +1,6 @@
-.account-info-div{
+#account-container{
     display: flex;
-    justify-items: left;
-    font-size: x-large;
-    margin: auto;
-    font-family:'Poppins', sans-serif; 
+    justify-content: space-around; 
+    background-color: white;
+    padding: 20px;
 }

@@ -1,4 +1,5 @@
-#work-type {
+#work-type,
+#worker-type {
   height: 35px;
   margin: 1%;
   font-size: large;
@@ -25,9 +26,44 @@
 #find-work fieldset,
 #find-worker fieldset {
   min-height: 200px;
+  width: 100%;
 }
 
 #find-worker {
   font-size: x-large;
   background-color: white;
+}
+
+.filter-btn-div {
+  padding: 20px 20px 0 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#reset-button-div {
+  text-align: center;
+  margin-top: 5px;
+}
+
+#find-work-filter,
+#find-worker-filter,
+#reset-button {
+    border-style: solid;
+    cursor: pointer;
+    font-family: 'Merienda';
+    margin: 0 0 1.5rem;
+    position: relative;
+    text-align: center;
+    border-radius: 2rem;
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1rem;
+    color:black; 
+}
+
+#find-work-filter:hover,
+#find-worker-filter:hover,
+#reset-button:hover {    
+  background-color:rgb(110, 94, 254);  
+  color:white;
 }

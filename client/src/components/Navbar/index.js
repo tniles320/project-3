@@ -36,8 +36,12 @@ function Navbar(props) {
             </li>
           );
         })}
+        <li>
+          <span className="nav-links" onClick={handleLogout}>
+            Logout
+          </span>
+        </li>
       </ul>
-      {/*<button onClick={handleLogout}>Logout</button> */}
     </nav>
   );
 }
