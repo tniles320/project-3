@@ -1,0 +1,21 @@
+.post-container {
+    height: 90%;
+    padding: 5px;
+}
+
+.post-link {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.post-link p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.post-link span {
+    margin-left: 10px;
+    font-size: 1rem;
+}

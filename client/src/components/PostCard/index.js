@@ -1,19 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 function PostCard(props) {
   const { post } = props;
   const { username, title, worktype, location, amount, _id } = post;
   return (
-    <div>
-      <Link to={`post/${_id}`}>
-        <h3>{title}</h3>
-        <p>{username}</p>
+    <Link to={`post/${_id}`} className="post-link">
+      <div className="post-container">
+        <h2>{title}</h2>
+        <span>Work Type:</span>
         <p>{worktype}</p>
+        <span>City:</span>
         <p>{location}</p>
+        <span>$$</span>
         <p>{amount}</p>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 
