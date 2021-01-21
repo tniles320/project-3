@@ -46,9 +46,9 @@
     color: #fff;
 }
 
-.nav-links-mobile {
+/* .nav-links-mobile {
     display: none;
-}
+} */
 
 .menu-icon {
     display: none;
@@ -113,7 +113,7 @@
         font-size: 2rem;
     }
 
-    .nav-links-mobile {
+    /* .nav-links-mobile {
         display: block;
         text-align: center;
         padding: 1.5rem;
@@ -124,13 +124,13 @@
         text-decoration: none;
         color: #fff;
         font-size: 1.5rem;
-    }
+    } */
 
-    .nav-links-mobile:hover {
+    /* .nav-links-mobile:hover {
         background: #fff;
         color: #6568f4;
         transition: 250ms;
-    }
+    } */
 
     Button {
         display: none;
