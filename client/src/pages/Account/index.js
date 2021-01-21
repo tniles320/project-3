@@ -27,10 +27,11 @@ function Account(props) {
   return (
     <div>
       <Navbar handleLogout={handleLogout} />
-      <div className="account-info-div">
+      <div className="account-info-div">Your Acount Information</div>
         <AccountInfo />
+       <h2> Your Posts </h2>
         <PostContainer posts={posts} />
-      </div>
+      
     </div>
   );
 }

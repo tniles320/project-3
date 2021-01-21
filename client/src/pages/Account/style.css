@@ -1,8 +1,7 @@
 .account-info-div{
     display: flex;
-    flex-direction: row;
-    color:brown;
-    border: solid, 1px, red;
+    justify-items: left;
+    font-size: x-large;
     margin: auto;
-    
+    font-family:'Poppins', sans-serif; 
 }
