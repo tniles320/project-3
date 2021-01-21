@@ -8,6 +8,7 @@ import "./style.css";
 
 function Account(props) {
   const { handleLogout } = props;
+  const { _id } = useContext(UserContext);
 
   const [posts, setPosts] = useState([]);
 
@@ -24,14 +25,23 @@ function Account(props) {
     handleUserPosts();
   }, []);
 
+  const handleEditAccount = () => {
+    const editUsername = document.getElementById("edit-username").value;
+    const editEmail = document.getElementById("edit-email").value;
+    const editZip = document.getElementById("edit-zip").value;
+
+    API.editUser(_id, editUsername, editEmail, editZip).then(() => {
+      alert("Account Updated!");
+    });
+  };
+
   return (
     <div>
       <Navbar handleLogout={handleLogout} />
-      <div className="account-info-div">Your Acount Information</div>
-        <AccountInfo />
-       <h2> Your Posts </h2>
+      <div id="account-container">
+        <AccountInfo handleEditAccount={handleEditAccount} />
         <PostContainer posts={posts} />
-      
+      </div>
     </div>
   );
 }

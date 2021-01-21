@@ -11,6 +11,20 @@ export default {
     });
   },
 
+  editUser: function (_id, username, email, zipCode) {
+    return Axios({
+      method: "PUT",
+      withCredentials: true,
+      data: {
+        _id: _id,
+        username: username,
+        email: email,
+        zipCode: zipCode,
+      },
+      url: "/account",
+    });
+  },
+
   getPosts: function () {
     return Axios({
       method: "GET",
@@ -92,7 +106,14 @@ export default {
   },
 
   //posts user post with data
-  submitPost: function (title, amount, description, location, worktype, worktypeinquiry) {
+  submitPost: function (
+    title,
+    amount,
+    description,
+    location,
+    worktype,
+    worktypeinquiry
+  ) {
     return Axios({
       method: "POST",
       withCredentials: true,
@@ -102,7 +123,7 @@ export default {
         amount: amount,
         location: location,
         worktype: worktype,
-        worktypeinquiry: worktypeinquiry     
+        worktypeinquiry: worktypeinquiry,
       },
       url: "/post",
     });
