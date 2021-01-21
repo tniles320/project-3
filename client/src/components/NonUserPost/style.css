@@ -33,6 +33,15 @@
     padding: 10px 20px 10px 20px;
 }
 
+#description-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+#description-container label {
+    margin-left: 50px;
+}
+
 #post-loc-amount {
     display: flex;
     flex-direction: row;

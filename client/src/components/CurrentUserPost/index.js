@@ -22,7 +22,11 @@ function CurrentUserPost(props) {
       <div id="description-container">
         <label htmlFor="user-description">Description</label>
         <div id="user-description">
-          <input id="edit-description" defaultValue={description}></input>
+          <textarea
+            id="edit-description"
+            wrap="soft"
+            defaultValue={description}
+          ></textarea>
         </div>
       </div>
       <div id="user-loc-amount">
