@@ -12,7 +12,7 @@ function Post(props) {
     const amount = document.getElementById("post-amount").value;
     const description = document.getElementById("post-description").value;
     const location = document.getElementById("post-location").value;
-    const wtype = document.getElementById("work-type");
+    const wtype = document.getElementById("worktype");
     const worktype = wtype.options[wtype.selectedIndex].text;
 
     // axios call
