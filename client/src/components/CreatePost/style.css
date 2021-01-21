@@ -31,13 +31,20 @@
     text-align: center;
     width: 90%;
     height: 90%;
+    min-height: 200px;
     border-radius: 50px;
-    font-size: 1.2rem;
+    font: 1.2rem arial;
     margin: 10px auto 10px auto;
+    resize: none;
+}
+
+#description-container {
+    max-width: 800px;
+    margin: auto;
 }
 
 #description-container label {
-    margin-left: 140px;
+    margin-left: 50px;
 }
 
 #post-loc-amount {

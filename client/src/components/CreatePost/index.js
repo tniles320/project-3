@@ -20,9 +20,13 @@ function CreatePost(props) {
         </select>
       </div>
       <div id="description-container">
-        <label htmlFor="desciption-div">Description</label>
-        <div id="desciption-div">
-          <input id="post-description" placeholder="Post Description"></input>
+        <label htmlFor="description-div">Description</label>
+        <div id="description-div">
+          <textarea
+            id="post-description"
+            wrap="soft"
+            placeholder="Post Description"
+          ></textarea>
         </div>
       </div>
       <div id="post-loc-amount">
