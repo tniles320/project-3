@@ -92,7 +92,7 @@ export default {
   },
 
   //posts user post with data
-  submitPost: function (title, amount, description, location, worktype) {
+  submitPost: function (title, amount, description, location, worktype, worktypeinquiry) {
     return Axios({
       method: "POST",
       withCredentials: true,
@@ -102,6 +102,7 @@ export default {
         amount: amount,
         location: location,
         worktype: worktype,
+        worktypeinquiry: worktypeinquiry     
       },
       url: "/post",
     });
