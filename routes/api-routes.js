@@ -46,6 +46,7 @@ module.exports = function (app) {
         amount: req.body.amount,
         location: req.body.location,
         worktype: req.body.worktype,
+        worktypeinquiry: req.body.worktypeinquiry
       });
       newPost.save();
       res.send("Post Created");
