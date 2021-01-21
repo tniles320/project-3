@@ -19,6 +19,14 @@ function CreatePost(props) {
           <option value="IT & Admin">IT & Admin</option>
         </select>
       </div>
+      <div id="post-worktype-inquiry">
+        <label htmlFor="worktype-inquiry">Find Work OR Find a Worker</label>
+        <select id="worktype-inquiry">
+          <option value="select">Select</option>
+          <option value="Find Work">Find Work</option>
+          <option value="Find Worker">Find Worker</option>
+        </select>
+      </div>
       <div id="description-container">
         <label htmlFor="description-div">Description</label>
         <div id="description-div">
