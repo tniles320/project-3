@@ -1,19 +1,24 @@
 #dash-post-container {
-    max-width:600px;
-    margin-left: 600px;
+   display:flex;
     text-align: center;
     /* float: right; */
-    background-color: beige;
+    background-color: white;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(6, 15vw);
-    grid-gap: 15px
+    grid-template-columns: repeat(3, 3fr);
+    grid-template-rows: repeat(2, 2fr);
+    grid-gap: 5px
 }
 
 .post-card {
+    border-style: solid;
+    border-color: blue;
+    border-radius: 1rem;
     background-color: white;
-    max-width:300px;
+    max-width: width auto;
     /* width:200%;
     height: 100%; */
     object-fit: cover;
+}
+.post-card:hover{
+    background-color: rgb(156, 198, 247);
 }
