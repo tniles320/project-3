@@ -36,12 +36,11 @@ function CreatePost(props) {
             <input id="post-location" placeholder="City"></input>
           </div>
         </div>
-        <div> 
-          <label htmlFor="image-div">Upload Image</label>
-          <button id="photoupload" onClick={handlePost}>
-            Upload
-          </button>
-        </div>
+        <div id="image">
+        <button id="upload-image" onClick={handlePost}>
+          Image
+        </button>
+      </div>
         <div>
           <label htmlFor="amount-div">Amount</label>
           <div id="amount-div">

@@ -2,6 +2,7 @@ import React from "react";
 import CreatePost from "../../components/CreatePost";
 import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
+import multer from "../server.js"
 
 function Post(props) {
   const { handleLogout } = props;
