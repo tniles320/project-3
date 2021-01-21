@@ -21,9 +21,11 @@ function Navbar(props) {
       <h1 className="navbar-logo">
         ManyGigs <i className="fas fa-comment-dollar"></i>
       </h1>
+      {/* Handle click function for menu-icon */}
       <div className="menu-icon" onClick={() => handleClick}>
         <i className={navBtn.clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
+      {/* Displays NavBarItems in Navbar */}
       <ul className={navBtn.clicked ? "nav-menu active" : "nav-menu"}>
         {MenuItems.map((item, index) => {
           return (
@@ -35,8 +37,7 @@ function Navbar(props) {
           );
         })}
       </ul>
-      <button>Search</button>
-      <button onClick={handleLogout}>Logout</button>
+      {/*<button onClick={handleLogout}>Logout</button> */}
     </nav>
   );
 }

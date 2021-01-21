@@ -17,20 +17,20 @@ function Footer() {
                     </div>
                     {/* Column 2 */}
                     <div className="grid-item">
-                        <h4>Other Info</h4>
+                        <h4>Community</h4>
                         <ul className="list-unstyled">
-                            <li>Blah Blah info</li>
-                            <li>More Stuff</li>
-                            <li>More More</li>
+                            <li>Careers</li>
+                            <li>Disaster Aid</li>
+                            <li>Contact Us</li>
                         </ul>
                     </div>
                     { /* Column 3 */}
                     <div className="grid-item">
-                        <h4>Last Column</h4>
+                        <h4>Legal</h4>
                         <ul className="list-unstyled">
                             <li>Copyright</li>
                             <li>Trademark</li>
-                            <li>All of that</li>
+                            <li>Patent Pending</li>
                         </ul>
                     </div>
                 </div>
