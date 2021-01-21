@@ -8,6 +8,11 @@ const PostSchema = new Schema({
     trim: true,
     required: "User ID is required",
   },
+  username: {
+    type: String,
+    trim: true,
+    required: "Username is required",
+  },
   title: {
     type: String,
     trim: true,

@@ -31,7 +31,7 @@ app.use(
 app.use(cookieParser("secretcode"));
 app.use(passport.initialize());
 app.use(passport.session());
-require("./config/passportConfig")(passport);
+require("./passportConfig")(passport);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === "production") {
 require("./routes/api-routes.js")(app);
 
 // allows mongoose to use atlas or local database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/user", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/users", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

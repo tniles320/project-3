@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Account from "./pages/Account";
-import Navbar from "./components/Navbar";
+import Post from "./pages/Post";
 import {
   BrowserRouter as Router,
   Route,
@@ -10,7 +10,6 @@ import {
   Redirect,
 } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
-import Axios from "axios";
 import UserContext from "./utils/UserContext";
 import API from "./utils/API";
 
@@ -24,14 +23,9 @@ function App() {
     loggedIn: false,
   });
 
-  useEffect(() => {
-    document.title = "ManyGigs";
-
-    if (!user) {
-      return;
-    }
-
-    API.getUser(user).then((res) => {
+  // sets user state when the page is loaded
+  const handleUser = () => {
+    API.getUser().then((res) => {
       if (res.data) {
         setUser({
           username: res.data.username,
@@ -43,9 +37,14 @@ function App() {
         });
       }
     });
-  }, [user]);
+  };
 
-  const logout = (event) => {
+  useEffect(() => {
+    handleUser();
+  }, []);
+
+  // logout function with axios call utilizing API
+  const handleLogout = (event) => {
     event.preventDefault();
 
     API.logout().then((res) => {
@@ -63,38 +62,36 @@ function App() {
       }
     });
   };
+  console.log(user);
 
-  if (user.loggedIn) {
-    return (
-      <Router>
-        <div>
-          <UserContext.Provider value={user}>
-            <Switch>
-              <Route exact path="/">
-                <Redirect to="/dashboard" />
-              </Route>
-              <Route>
-                <Navbar logout={logout} />
-                <Dashboard exact path="/dashboard" />
-              </Route>
-              <Route>
-                <Account exact path="/account" logout={logout} />
-              </Route>
-              <Route>
-                <NoMatch />
-              </Route>
-            </Switch>
-          </UserContext.Provider>
-        </div>
-      </Router>
-    );
-  } else {
-    return (
+  return (
+    <UserContext.Provider value={user}>
       <Router>
         <div>
           <Switch>
-            <Route>
-              <Home exact path="/" />
+            <Route exact path="/">
+              {user.loggedIn ? (
+                <Dashboard handleLogout={handleLogout} />
+              ) : (
+                <Home handleUser={handleUser} />
+              )}
+            </Route>
+            <Route exact path="/account">
+              {user.loggedIn ? (
+                <Account handleLogout={handleLogout} />
+              ) : (
+                <Home />
+              )}
+            </Route>
+            <Route exact path="/dashboard">
+              {user.loggedIn ? (
+                <Dashboard handleLogout={handleLogout} />
+              ) : (
+                <Home />
+              )}
+            </Route>
+            <Route exact path="/post">
+              {user.loggedIn ? <Post /> : <Home />}
             </Route>
             <Route>
               <NoMatch />
@@ -102,8 +99,8 @@ function App() {
           </Switch>
         </div>
       </Router>
-    );
-  }
+    </UserContext.Provider>
+  );
 }
 
 export default App;
