@@ -4,7 +4,7 @@
 
 ## This website was designed to connect freelance workers with gigs in their area based on the zip code provided when creating an account.
 
-![Many Gigs Demo](demo/manygigs.gif)
+![Many Gigs Demo](demo/manygigs.gif.gif)
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
