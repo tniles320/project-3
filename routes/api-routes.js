@@ -46,6 +46,7 @@ module.exports = function (app) {
         amount: req.body.amount,
         location: req.body.location,
         worktype: req.body.worktype,
+        worktypeinquiry: req.body.worktypeinquiry,
       });
       newPost.save();
       res.send("Post Created");
@@ -83,6 +84,21 @@ module.exports = function (app) {
     res.send(req.user);
   });
 
+  app.put("/account", (req, res) => {
+    User.updateOne(
+      { _id: req.body._id },
+      {
+        $set: {
+          username: req.body.username,
+          email: req.body.email,
+          zipCode: req.body.zipCode,
+        },
+      }
+    ).then((dbUser) => {
+      res.send(dbUser);
+    });
+  });
+
   // NOT COMPLETE gets indiviual user account, used to view accounts other than the logged in user
   app.get("/account/id:", (req, res) => {
     User.findOne({ _id: req.params.id }, (err) => {
@@ -107,7 +123,7 @@ module.exports = function (app) {
           desciption: req.body.description,
           location: req.body.location,
           amount: req.body.amount,
-          worktype: req.body.worktype
+          worktype: req.body.worktype,
         },
       }
     ).then((dbPost) => {

@@ -37,7 +37,13 @@ const PostSchema = new Schema({
     type: String,
     trim: true,
     required: "worktype is required",
+  }, 
+  worktypeinquiry: {
+    type: String,
+    trim: true,
+    required: "worktypeinquiry is required",
   },
+
   messages: [
     {
       type: Schema.Types.ObjectId,

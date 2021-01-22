@@ -24,6 +24,13 @@ function CreatePost(props) {
         <button id="upload-image" onClick={handlePost}>
           Image
         </button>
+      <div id="post-worktype-inquiry">
+        <label htmlFor="worktypeinquiry">Find Work OR Find a Worker</label>
+        <select id="worktypeinquiry">
+          <option value="select">Select</option>
+          <option value="Find Work">Find Work</option>
+          <option value="Find Worker">Find Worker</option>
+        </select>
       </div>
       <div id="description-container">
         <label htmlFor="description-div">Description</label>
@@ -60,6 +67,7 @@ function CreatePost(props) {
           Submit Post!
         </button>
       </div>
+    </div>
     </div>
   );
 }

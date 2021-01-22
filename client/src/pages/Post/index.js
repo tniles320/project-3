@@ -15,9 +15,11 @@ function Post(props) {
     const contact = document.getElementById("post-contact").value;
     const wtype = document.getElementById("worktype");
     const worktype = wtype.options[wtype.selectedIndex].text;
+    const itype = document.getElementById("worktypeinquiry");
+    const worktypeinquiry = itype.options[itype.selectedIndex].text;
 
     // axios call
-    API.submitPost(title, amount, description, location, worktype).then(() => {
+    API.submitPost(title, amount, description, location, worktype, worktypeinquiry).then(() => {
       window.location.replace("/dashboard");
       alert("Post Created!");
     });
