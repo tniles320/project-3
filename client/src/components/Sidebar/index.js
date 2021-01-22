@@ -23,7 +23,7 @@ function Sidebar(props) {
           <div className="filter-btn-div">
             <button
               id="find-work-filter"
-              onClick={(event) => handleFilter(work, event)}
+              onClick={(event) => handleFilter(worker, event)}
             >
               Filter
             </button>
@@ -46,7 +46,7 @@ function Sidebar(props) {
           <div className="filter-btn-div">
             <button
               id="find-worker-filter"
-              onClick={(event) => handleFilter(worker, event)}
+              onClick={(event) => handleFilter(work, event)}
             >
               Filter
             </button>

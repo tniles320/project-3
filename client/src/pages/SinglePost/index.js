@@ -31,13 +31,15 @@ function SinglePost(props) {
     const description = document.getElementById("edit-description").value;
     const location = document.getElementById("edit-location").value;
     const worktype = document.getElementById("edit-worktype").value;
+    const contact = document.getElementById("edit-contact").value;
     API.updatePost(
       singlePost._id,
       title,
       description,
       location,
       amount,
-      worktype
+      worktype,
+      contact
     ).then((res) => {
       alert("Post Updated!");
       console.log(res.config.data);

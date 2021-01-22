@@ -44,7 +44,8 @@
 }
 
 #user-loc,
-#user-amnt {
+#user-amnt,
+#user-contact {
     display: flex;
     justify-content: center;
     background: white;
@@ -86,11 +87,9 @@
     resize: none;
 }
 
-#edit-location {
-    border: none;
-}
-
-#edit-amount {
+#edit-location,
+#edit-amount,
+#edit-contact {
     border: none;
 }
 

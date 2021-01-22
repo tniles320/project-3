@@ -1,12 +1,12 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import CreatePost from "../../components/CreatePost";
 import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
 import axios from "axios";
 
-
 function Post(props) {
-  const [file, setFile] = useState()
+  const [file, setFile] = useState();
+  const [image, setImage] = useState();
   const { handleLogout } = props;
   // uses input from postContainer component to create post
   const handlePost = () => {
@@ -21,32 +21,41 @@ function Post(props) {
     const worktypeinquiry = itype.options[itype.selectedIndex].text;
 
     // axios call
-    API.submitPost(title, amount, description, location, worktype, worktypeinquiry).then(() => {
+    API.submitPost(
+      title,
+      amount,
+      description,
+      location,
+      worktype,
+      worktypeinquiry,
+      image,
+      contact
+    ).then(() => {
       window.location.replace("/dashboard");
       alert("Post Created!");
     });
   };
-  const handleUpload = async(event) => {
-    event.preventDefault()
+  const handleUpload = async (event) => {
+    event.preventDefault();
     const formData = new FormData();
-     formData.append("file",file);
-    console.log(file)
-    //await API.uploadImage(formData)
-    await axios.post("/upload", formData ,{
-    }).then(res => {
-      console.log(res)
-    })
-  }
-  const handleFilechange = (e)=>{
-    setFile(e.target.files[0])
-  }
+    formData.append("file", file);
+    console.log(file);
+    await API.uploadImage(formData).then((res) => {
+      setImage(res.data.path);
+    });
+  };
+  const handleFilechange = (e) => {
+    setFile(e.target.files[0]);
+  };
 
   return (
     <div>
       <Navbar handleLogout={handleLogout} />
-      <CreatePost handlePost={handlePost} handleUpload={handleUpload} handleFilechange={handleFilechange}/>
-
-
+      <CreatePost
+        handlePost={handlePost}
+        handleUpload={handleUpload}
+        handleFilechange={handleFilechange}
+      />
     </div>
   );
 }

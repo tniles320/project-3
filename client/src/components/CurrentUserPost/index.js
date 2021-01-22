@@ -3,7 +3,15 @@ import "./style.css";
 
 function CurrentUserPost(props) {
   const { handleEditPost, handleDeletePost, singlePost } = props;
-  const { amount, description, location, title, worktype } = singlePost;
+  const {
+    amount,
+    description,
+    location,
+    title,
+    worktype,
+    upload,
+    contact,
+  } = singlePost;
   return (
     <div>
       <h2 id="edit-note">Click into any form to edit</h2>
@@ -34,6 +42,12 @@ function CurrentUserPost(props) {
           <label htmlFor="user-loc">Location</label>
           <div id="user-loc">
             <input id="edit-location" defaultValue={location}></input>
+          </div>
+        </div>
+        <div>
+          <label htmlFor="user-contact">Contact Info</label>
+          <div id="user-contact">
+            <input id="edit-contact" defaultValue={contact}></input>
           </div>
         </div>
         <div>

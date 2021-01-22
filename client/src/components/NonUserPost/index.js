@@ -3,7 +3,15 @@ import "./style.css";
 
 function NonUserPost(props) {
   const { singlePost } = props;
-  const { amount, description, location, title, worktype } = singlePost;
+  const {
+    amount,
+    description,
+    location,
+    title,
+    worktype,
+    upload,
+    contact,
+  } = singlePost;
   return (
     <div>
       <h1 id="post-ttl">{title}</h1>
@@ -22,6 +30,12 @@ function NonUserPost(props) {
           <label htmlFor="post-loc">Location</label>
           <div id="post-loc">
             <p>{location}</p>
+          </div>
+        </div>
+        <div>
+          <label htmlFor="post-contact">Contact Info</label>
+          <div id="post-contact">
+            <p>{contact}</p>
           </div>
         </div>
         <div>
