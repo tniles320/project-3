@@ -10,3 +10,11 @@ h2 {
     font-family: 'Poppins', sans-serif;
     text-align: center;
 }
+
+@media screen and (max-width: 576px) {
+
+    .dash-container {
+        flex-direction: column;
+    }
+    
+  }

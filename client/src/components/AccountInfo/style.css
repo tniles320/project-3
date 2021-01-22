@@ -40,3 +40,12 @@
   background-color:rgb(110, 94, 254);  
   color:white;
 }
+
+@media screen and (max-width: 576px) {
+
+  .account-info-container{
+      width: 60%;
+      margin: auto;
+  }
+  
+}

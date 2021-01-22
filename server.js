@@ -9,7 +9,6 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const { createBrotliCompress } = require("zlib");
 
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -36,6 +35,17 @@ require("./config/passportConfig")(passport);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+// creates static directory for multer image uploads
+// * path can be tested by using url "http://localhost:3001/public/uploads/1611297725732-cymbal-bg.jpg"
+// ** in the future store image path and name to database separately to enable easier file editing and deletion
+const directory = path.join(__dirname, "public/uploads");
+app.use("/public/uploads", express.static(directory));
+
+// sends file to client, *** client is using the file path, may be a way to use raw data that is sent from this
+app.get("/upload/:file", function (req, res) {
+  res.sendFile(`${__dirname}/public/uploads/${req.params.file}`);
+});
 
 require("./routes/api-routes.js")(app);
 

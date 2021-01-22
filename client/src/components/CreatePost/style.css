@@ -154,3 +154,18 @@
 :focus {
     outline: none;
 }
+
+@media screen and (max-width: 576px) {
+
+    #post-loc-amount {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    #location-div,
+    #amount-div,
+    #contact-div {
+        margin-bottom: 10px;
+    }
+    
+}

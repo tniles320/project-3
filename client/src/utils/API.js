@@ -157,4 +157,8 @@ export default {
       },
     });
   },
+
+  getImage: function (file) {
+    return axios.get(`/upload/${file}`);
+  },
 };

@@ -6,7 +6,7 @@ function Sidebar(props) {
   const work = "Find Work";
   const worker = "Find Worker";
   return (
-    <div>
+    <div id="sidebar-div">
       {/* Find Work dropdowns */}
       <form id="find-work">
         <fieldset>

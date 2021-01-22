@@ -39,9 +39,9 @@ function Post(props) {
     event.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
-    console.log(file);
     await API.uploadImage(formData).then((res) => {
-      setImage(res.data.path);
+      console.log(res.data);
+      setImage(res.data.filename);
     });
   };
   const handleFilechange = (e) => {
