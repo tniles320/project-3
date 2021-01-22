@@ -3,7 +3,7 @@ import "./style.css";
 
 // input forms for creating a post
 function CreatePost(props) {
-  const { handlePost, handleUpload, handleFilechange} = props;
+  const { handlePost, handleUpload, handleFilechange } = props;
   return (
     <div>
       <h2 id="create-note">Click into any form to fill out</h2>
@@ -20,14 +20,18 @@ function CreatePost(props) {
         </select>
       </div>
       <div id="upload-image">
-        <label htmlFor="image"> Upload Image</label>
-        {/* <button id="upload-image" onClick={handlePost}>
-          Image
-        </button> */}
-        <form id="upload-form" onSubmit={handleUpload} > 
-        <input id="file" type="file" name="myImage" accept="image/*" onChange = {handleFilechange}/>
-        <input type="submit" value="Upload Photo" />
+        <form id="upload-form" onSubmit={handleUpload}>
+          <input
+            id="file"
+            type="file"
+            name="myImage"
+            accept="image/*"
+            onChange={handleFilechange}
+          />
+          <input type="submit" value="Upload Photo" />
         </form>
+      </div>
+
       <div id="post-worktype-inquiry">
         <label htmlFor="worktypeinquiry">Find Work OR Find a Worker</label>
         <select id="worktypeinquiry">
@@ -56,7 +60,10 @@ function CreatePost(props) {
         <div>
           <label htmlFor="contact-div">Contact Info</label>
           <div id="contact-div">
-            <input id="post-contact" placeholder="Email or Phone Number"></input>
+            <input
+              id="post-contact"
+              placeholder="Email or Phone Number"
+            ></input>
           </div>
         </div>
         <div>
@@ -71,7 +78,6 @@ function CreatePost(props) {
           Submit Post!
         </button>
       </div>
-    </div>
     </div>
   );
 }

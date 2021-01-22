@@ -7,7 +7,7 @@ export default {
     return Axios({
       method: "GET",
       withCredentials: true,
-      url: "/user",
+      url: "/api/user",
     });
   },
 
@@ -21,14 +21,14 @@ export default {
         email: email,
         zipCode: zipCode,
       },
-      url: "/account",
+      url: "/api/account",
     });
   },
 
   getPosts: function () {
     return Axios({
       method: "GET",
-      url: "/dashboard",
+      url: "/api/dashboard",
     });
   },
 
@@ -38,11 +38,19 @@ export default {
       params: {
         id: id,
       },
-      url: `/post/${id}`,
+      url: `/api/post/${id}`,
     });
   },
 
-  updatePost: function (id, title, description, location, amount, worktype) {
+  updatePost: function (
+    id,
+    title,
+    description,
+    location,
+    amount,
+    worktype,
+    contact
+  ) {
     return Axios({
       method: "PUT",
       params: {
@@ -54,8 +62,9 @@ export default {
         location: location,
         amount: amount,
         worktype: worktype,
+        contact: contact,
       },
-      url: `/post/${id}`,
+      url: `/api/post/${id}`,
     });
   },
 
@@ -65,7 +74,7 @@ export default {
       params: {
         id: id,
       },
-      url: `/post/${id}`,
+      url: `/api/post/${id}`,
     });
   },
 
@@ -80,7 +89,7 @@ export default {
         zipCode: zipCode,
       },
       withCredentials: true,
-      url: "/register",
+      url: "/api/register",
     });
   },
 
@@ -93,7 +102,7 @@ export default {
         password: password,
       },
       withCredentials: true,
-      url: "/login",
+      url: "/api/login",
     });
   },
 
@@ -101,7 +110,7 @@ export default {
   logout: function () {
     return Axios({
       method: "GET",
-      url: "/logout",
+      url: "/api/logout",
     });
   },
 
@@ -112,7 +121,9 @@ export default {
     description,
     location,
     worktype,
-    worktypeinquiry
+    worktypeinquiry,
+    upload,
+    contact
   ) {
     return Axios({
       method: "POST",
@@ -124,8 +135,10 @@ export default {
         location: location,
         worktype: worktype,
         worktypeinquiry: worktypeinquiry,
+        upload: upload,
+        contact: contact,
       },
-      url: "/post",
+      url: "/api/post",
     });
   },
 
@@ -134,14 +147,14 @@ export default {
     return Axios({
       method: "GET",
       withCredentials: true,
-      url: "/post",
+      url: "/api/post",
     });
   },
   uploadImage: function (formData) {
-    return axios.post('/upload', formData, {
+    return axios.post("/api/upload", formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-  }
-})
-}
-}
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  },
+};
