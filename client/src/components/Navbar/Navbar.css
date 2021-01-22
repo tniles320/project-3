@@ -14,11 +14,6 @@
     cursor: pointer;
 }
 
-.fa-react {
-    margin-left: 0.5rem;
-    font-size: 1.6rem;
-}
-
 .nav-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
@@ -47,18 +42,29 @@
     color: #fff;
 }
 
-/* .nav-links-mobile {
-    display: none;
-} */
 
 .menu-icon {
     display: none;
+}
+
+@media screen and (max-width: 720px) {
+    .nav-links {
+        text-align: center;
+        margin-left: -50px;
+        margin-bottom: 40px;
+        margin-right: -15px;
+    }
+    h1 {
+        margin-top: 25px;
+    }
+
 }
 
  @media screen and (max-width: 960px) {
     .NavbarItems {
         position: relative;
     }
+}
 
     .Nav-menu {
         display: flex;
@@ -114,26 +120,8 @@
         font-size: 2rem;
     }
 
-    /* .nav-links-mobile {
-        display: block;
-        text-align: center;
-        padding: 1.5rem;
-        margin: 2rem auto;
-        border-radius: 4px;
-        width: 80%;
-        background: #4ad9e4;
-        text-decoration: none;
-        color: #fff;
-        font-size: 1.5rem;
-    } */
-
-    /* .nav-links-mobile:hover {
-        background: #fff;
-        color: #6568f4;
-        transition: 250ms;
-    } */
-
     Button {
         display: none;
     }
-}
+
+
