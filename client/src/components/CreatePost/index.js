@@ -19,6 +19,12 @@ function CreatePost(props) {
           <option value="IT & Admin">IT & Admin</option>
         </select>
       </div>
+      <div id="upload-image">
+        <label htmlFor="image"> Upload Image</label>
+        <button id="upload-image" onClick={handlePost}>
+          Image
+        </button>
+      </div>
       <div id="description-container">
         <label htmlFor="description-div">Description</label>
         <div id="description-div">
@@ -36,11 +42,12 @@ function CreatePost(props) {
             <input id="post-location" placeholder="City"></input>
           </div>
         </div>
-        <div id="image">
-        <button id="upload-image" onClick={handlePost}>
-          Image
-        </button>
-      </div>
+        <div>
+          <label htmlFor="contact-div">Contact Info</label>
+          <div id="contact-div">
+            <input id="post-contact" placeholder="Email or Phone Number"></input>
+          </div>
+        </div>
         <div>
           <label htmlFor="amount-div">Amount</label>
           <div id="amount-div">

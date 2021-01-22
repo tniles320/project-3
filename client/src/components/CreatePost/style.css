@@ -56,7 +56,8 @@
 }
 
 #location-div,
-#amount-div {
+#amount-div,
+#contact-div {
     display: flex;
     justify-content: center;
     background: white;
@@ -76,11 +77,19 @@
 #post-worktype {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 250px;
     margin: auto;
 }
 
-#worktype {
+#upload-image {
+    display: flex;
+    flex-direction:row;
+    width: 250px;
+    margin: auto;
+}
+
+#worktype,
+#upload-image {
     border-radius: 50px;
     height: 35px;
     font-size: 1.2rem;
@@ -90,7 +99,9 @@
 #post-location {
     border: none;
 }
-
+#post-contact {
+    border:none;
+}
 #post-amount {
     border: none;
 }
@@ -123,6 +134,7 @@
 #post-description,
 #post-amount,
 #post-location,
+#post-contact,
 :focus {
     outline: none;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import CreatePost from "../../components/CreatePost";
 import API from "../../utils/API";
 import Navbar from "../../components/Navbar";
-import multer from "../server.js"
+
 
 function Post(props) {
   const { handleLogout } = props;
@@ -12,6 +12,7 @@ function Post(props) {
     const amount = document.getElementById("post-amount").value;
     const description = document.getElementById("post-description").value;
     const location = document.getElementById("post-location").value;
+    const contact = document.getElementById("post-contact").value;
     const wtype = document.getElementById("worktype");
     const worktype = wtype.options[wtype.selectedIndex].text;
 
