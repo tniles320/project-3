@@ -3,7 +3,7 @@ import "./style.css";
 
 // input forms for creating a post
 function CreatePost(props) {
-  const { handlePost } = props;
+  const { handlePost, handleUpload, handleFilechange} = props;
   return (
     <div>
       <h2 id="create-note">Click into any form to fill out</h2>
@@ -19,6 +19,15 @@ function CreatePost(props) {
           <option value="IT & Admin">IT & Admin</option>
         </select>
       </div>
+      <div id="upload-image">
+        <label htmlFor="image"> Upload Image</label>
+        {/* <button id="upload-image" onClick={handlePost}>
+          Image
+        </button> */}
+        <form id="upload-form" onSubmit={handleUpload} > 
+        <input id="file" type="file" name="myImage" accept="image/*" onChange = {handleFilechange}/>
+        <input type="submit" value="Upload Photo" />
+        </form>
       <div id="post-worktype-inquiry">
         <label htmlFor="worktypeinquiry">Find Work OR Find a Worker</label>
         <select id="worktypeinquiry">
@@ -45,6 +54,12 @@ function CreatePost(props) {
           </div>
         </div>
         <div>
+          <label htmlFor="contact-div">Contact Info</label>
+          <div id="contact-div">
+            <input id="post-contact" placeholder="Email or Phone Number"></input>
+          </div>
+        </div>
+        <div>
           <label htmlFor="amount-div">Amount</label>
           <div id="amount-div">
             <input id="post-amount" placeholder="$$$"></input>
@@ -56,6 +71,7 @@ function CreatePost(props) {
           Submit Post!
         </button>
       </div>
+    </div>
     </div>
   );
 }

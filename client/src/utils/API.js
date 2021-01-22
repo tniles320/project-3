@@ -1,5 +1,5 @@
 import Axios from "axios";
-
+import axios from "axios";
 // Export an object containing methods we'll use for accessing the GitHub Jobs API
 
 export default {
@@ -137,4 +137,11 @@ export default {
       url: "/post",
     });
   },
-};
+  uploadImage: function (formData) {
+    return axios.post('/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+  }
+})
+}
+}

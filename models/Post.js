@@ -33,6 +33,10 @@ const PostSchema = new Schema({
     trim: true,
     required: "location is required",
   },
+  upload: {
+    type: String,
+    trim: true,
+  },
   worktype: {
     type: String,
     trim: true,
