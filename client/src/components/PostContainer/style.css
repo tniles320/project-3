@@ -9,7 +9,7 @@
 .post-card {
     /* border-style: solid;
     border-color: blue; */
-    box-shadow: blue 2px 3px 5px 1px;
+    box-shadow: rgba(73, 63, 252) 2px 3px 5px 1px;
     border-radius: 1rem;
     background-color: white;
     min-width: auto;

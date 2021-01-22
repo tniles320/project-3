@@ -3,18 +3,13 @@ import "./style.css";
 
 function NonUserPost(props) {
   const { singlePost } = props;
-  const { amount, description, location, title, worktype, worktypeinquiry } = singlePost;
+  const { amount, description, location, title, worktype } = singlePost;
   return (
     <div>
       <h1 id="post-ttl">{title}</h1>
       <div id="post-worktype">
         <label htmlFor="worktype-text">Work Type</label>
         <p id="worktype-text">{worktype}</p>
-      </div>
-      
-      <div id="post-worktype-inquiry">
-        <label htmlFor="worktypeinquiry">Find Work or Find a Worker</label>
-        <p id="worktypeinquiry">{worktypeinquiry}</p>
       </div>
       <div id="description-container">
         <label htmlFor="post-description">Description</label>
