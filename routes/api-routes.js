@@ -1,6 +1,7 @@
 const passport = require("passport");
 const bcrypt = require("bcrypt");
 const { User, Post, Message } = require("../models");
+const multer = require("multer");
 
 module.exports = function (app) {
   // login route with authentication
@@ -52,6 +53,39 @@ module.exports = function (app) {
       res.send("Post Created");
     });
   });
+
+  // Image Upload (maybe)
+
+  //Set Storage Engine  
+const storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    cb(null, "public/uploads")
+  },
+  filename: function (req, file, cb) {
+    cb(
+      null,
+      Date.now() + "-" +  file.originalname
+    );
+  },
+});
+
+//Init Upload
+const upload = multer({
+  storage: storage,
+})
+
+  app.post("/upload", upload.single('file'), (req, res) => {
+    // upload((err) => {
+    //   if (err) {
+    //     res.render("index", { msg: err });
+    //   } else {
+    //     console.log(req.file);
+    //     res.send("test");
+    //   }
+    // });
+    res.json(req.file).status(200)
+  });
+  
   // gets all of logged in user's posts
   app.get("/post", (req, res) => {
     User.findOne({ username: req.user.username }).then((dbUser) => {
