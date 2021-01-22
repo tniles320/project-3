@@ -60,3 +60,18 @@
     width: 200px;
     height: 35px;
 }
+
+@media screen and (max-width: 576px) {
+
+    #post-loc-amount {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    #post-loc,
+    #post-amnt,
+    #post-contact {
+        margin-bottom: 10px;
+    }
+    
+}

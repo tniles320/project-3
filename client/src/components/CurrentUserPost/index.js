@@ -2,14 +2,13 @@ import React from "react";
 import "./style.css";
 
 function CurrentUserPost(props) {
-  const { handleEditPost, handleDeletePost, singlePost } = props;
+  const { handleEditPost, handleDeletePost, singlePost, upload } = props;
   const {
     amount,
     description,
     location,
     title,
     worktype,
-    upload,
     contact,
   } = singlePost;
   return (
@@ -17,6 +16,9 @@ function CurrentUserPost(props) {
       <h2 id="edit-note">Click into any form to edit</h2>
       <div id="user-ttl">
         <input id="edit-title" defaultValue={title}></input>
+      </div>
+      <div id="upload-div">
+        <img id="user-upload" src={upload} alt="post" />
       </div>
       <div id="user-worktype">
         <label htmlFor="edit-worktype">Work Type</label>

@@ -9,10 +9,11 @@ function SinglePost(props) {
   const { handleLogout } = props;
   const { _id } = useContext(UserContext);
   const [singlePost, setSinglePost] = useState({});
+  const [upload, setUpload] = useState();
 
   // sets state with post data and is editable if post is owned by logged in user
-  const handleSinglePost = () => {
-    API.getSinglePost(window.location.pathname.substr(6)).then((res) => {
+  const handleSinglePost = async () => {
+    await API.getSinglePost(window.location.pathname.substr(6)).then((res) => {
       if (_id === res.data.user) {
         return setSinglePost({ ...res.data, currentUser: true });
       } else {
@@ -21,8 +22,19 @@ function SinglePost(props) {
     });
   };
 
+  // retrieves image using image name from first api call *** using url in this case, using res.data may be possible
+  const handleGetImage = async () => {
+    await API.getSinglePost(window.location.pathname.substr(6)).then((res) => {
+      const uploadImage = res.data.upload;
+      API.getImage(uploadImage).then((res) => {
+        setUpload(res.config.url);
+      });
+    });
+  };
+
   useEffect(() => {
     handleSinglePost();
+    handleGetImage();
   }, []);
 
   const handleEditPost = () => {
@@ -59,6 +71,7 @@ function SinglePost(props) {
         <Navbar handleLogout={handleLogout} />
         <CurrentUserPost
           singlePost={singlePost}
+          upload={upload}
           handleEditPost={handleEditPost}
           handleDeletePost={handleDeletePost}
         />
@@ -68,7 +81,7 @@ function SinglePost(props) {
     return (
       <div>
         <Navbar handleLogout={handleLogout} />
-        <NonUserPost singlePost={singlePost} />
+        <NonUserPost singlePost={singlePost} upload={upload} />
       </div>
     );
   }

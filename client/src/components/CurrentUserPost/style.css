@@ -14,6 +14,11 @@
     text-align: center;
 }
 
+#user-upload {
+    max-height: 200px;
+    max-width: 200px;
+}
+
 #user-description {
     display: flex;
     justify-content: flex-start;
@@ -121,4 +126,19 @@
 
 #edit-btns button:focus {
     outline: none;
+}
+
+@media screen and (max-width: 576px) {
+
+    #user-loc-amount {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    #user-loc,
+    #user-amnt,
+    #user-contact {
+        margin-bottom: 10px;
+    }
+    
 }

@@ -7,6 +7,10 @@
     font-size: 1.2rem;
 }
 
+#nav-btns {
+    visibility: visible;
+}
+
 .navbar-logo {
     color: #fff;
     justify-self: start;
@@ -47,7 +51,15 @@
     display: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 576px) {
+
+    #nav-btns {
+        visibility: hidden;
+    }
+
+}
+
+/* @media screen and (max-width: 720px) {
     .nav-links {
         text-align: center;
         margin-left: -50px;
@@ -118,7 +130,7 @@
     .fa-times {
         color:#fff;
         font-size: 2rem;
-    }
+    } */
 
     /* Button {
         display: none;
