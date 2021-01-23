@@ -50,22 +50,22 @@ Will add these later when we have everything finished
 Taylor Niles
 * 
 * [GitHub](https://github.com/tniles320)
-* 
+* [LinkedIn](https://www.linkedin.com/in/taylorniles117/)
 
 Jacqueline Perez
 * 
-* [GitHub]()
-* [LinkedIn]()
+* [GitHub](https://github.com/jcquper)
+* [LinkedIn](https://www.linkedin.com/in/jacqueline-perez-08056318a/)
 
 Curtis Jackson
 * 
-* [GitHub]()
-* [LinkedIn]()
+* [GitHub](https://github.com/CJack74)
+* [LinkedIn](https://www.linkedin.com/in/cjackson74/)
 
 Jesus Gonazalez
 * 
-* [GitHub]()
-* [LinkedIn]()
+* [GitHub](https://github.com/jesusgon4554)
+* [LinkedIn](https://www.linkedin.com/in/jesus-gonzalez735/)
 
 Thomas Mitchell
 * mitcht032@yahoo.com
