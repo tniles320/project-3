@@ -2,19 +2,21 @@ import React from "react";
 import "./style.css";
 
 function NonUserPost(props) {
-  const { singlePost } = props;
+  const { singlePost, upload } = props;
   const {
     amount,
     description,
     location,
     title,
     worktype,
-    upload,
     contact,
   } = singlePost;
   return (
     <div>
       <h1 id="post-ttl">{title}</h1>
+      <div id="upload-div">
+        <img id="post-upload" src={upload} alt="post" />
+      </div>
       <div id="post-worktype">
         <label htmlFor="worktype-text">Work Type</label>
         <p id="worktype-text">{worktype}</p>
