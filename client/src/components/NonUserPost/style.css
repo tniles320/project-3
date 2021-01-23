@@ -6,7 +6,7 @@
     height: 40px;
     text-decoration: none;
     margin-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 #post-worktype {
@@ -19,6 +19,19 @@
     background: white;
     border-radius: 50px;
     height: 30px;
+}
+
+#upload-div {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#post-upload {
+    max-height: 300px;
+    max-width: 300px;
+    margin: auto;
 }
 
 #post-description {
@@ -48,6 +61,7 @@
     justify-content: space-around;
     margin: auto;
     max-width: 800px;
+    margin-bottom: 40px;
 }
 
 #post-loc,
@@ -63,6 +77,11 @@
 
 @media screen and (max-width: 576px) {
 
+    #post-ttl {
+        max-width: 200px;
+        height: 80px;
+    }
+
     #post-loc-amount {
         flex-direction: column !important;
         align-items: center;
@@ -72,6 +91,19 @@
     #post-amnt,
     #post-contact {
         margin-bottom: 10px;
+    }
+
+    #description-container {
+        width: 90%;
+    }
+
+    #upload-div {
+        width: 90%;
+    }
+
+    #post-upload {
+        max-height: 200px;
+        max-width: 200px;
     }
     
 }
