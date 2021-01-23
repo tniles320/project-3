@@ -71,8 +71,17 @@
     justify-content: center;
     background: white;
     border-radius: 50px;
-    width: 200px;
+    max-width: 350px;
+    min-width: 200px;
+    padding: 4px 10px 0 10px;
     height: 35px;
+    margin-bottom: 10px;
+}
+
+#post-loc p,
+#post-amnt p,
+#post-contact p {
+    font-size: 1.1rem;
 }
 
 @media screen and (max-width: 576px) {
@@ -85,12 +94,6 @@
     #post-loc-amount {
         flex-direction: column !important;
         align-items: center;
-    }
-
-    #post-loc,
-    #post-amnt,
-    #post-contact {
-        margin-bottom: 10px;
     }
 
     #description-container {
